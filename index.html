@@ -1,197 +1,1044 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-BR">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Saque · Clube de tênis entre vizinhos</title>
-<meta name="description" content="Jogue tênis nas quadras do bairro, sem pagar aluguel por hora. Parceiros no seu nível, entre vizinhos verificados.">
-<meta property="og:title" content="Saque · Clube de tênis entre vizinhos">
-<meta property="og:description" content="Parceiros no seu nível, nas quadras do bairro, entre moradores verificados.">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='46' fill='%2314291F'/%3E%3Ctext x='50' y='66' font-size='54' text-anchor='middle' fill='%23F5F1E8' font-family='Georgia,serif'%3ES%3C/text%3E%3C/svg%3E">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<style>html{color-scheme:light}body{margin:0;font:14px system-ui,sans-serif}img{max-width:100%}[hidden]{display:none!important}</style>
+<title>Saque</title>
+<meta name="description" content="Clube de tênis do bairro: encontre parceiros do seu nível, perto de você.">
+<meta property="og:title" content="Saque">
+<meta property="og:description" content="Clube de tênis do bairro: encontre parceiros do seu nível, perto de você.">
+<meta property="og:image" content="media/poster.jpg">
+<link rel="icon" href="media/logo.png" type="image/png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
-:root{--bg:#F5F1E8;--ink:#14291F;--mute:#5E695F;--line:rgba(20,41,31,.18);--sage:#DDE7D5;--forest:#1F5C3D;--deep:#1B4A33;--serif:'Cormorant Garamond',Georgia,serif;--sans:'Inter',system-ui,sans-serif}
-*{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
-body{background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:17px;line-height:1.65;-webkit-font-smoothing:antialiased}
-a{color:inherit}
-.wrap{max-width:1180px;margin:0 auto;padding:0 40px}
-.label{font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--forest);font-weight:500}
-.btn{display:inline-block;background:var(--forest);color:var(--bg);text-decoration:none;font-size:12px;font-weight:500;letter-spacing:.18em;text-transform:uppercase;padding:19px 36px;transition:opacity .2s}
-.btn:hover{opacity:.85}
-.link{color:var(--forest);font-size:12px;font-weight:500;letter-spacing:.18em;text-transform:uppercase;text-decoration:none;border-bottom:1px solid currentColor;padding-bottom:4px}
-
-header{padding:36px 0;background:var(--sage)}
-header .wrap{display:flex;justify-content:space-between;align-items:baseline}
-.mark{font-family:var(--serif);font-size:30px;font-weight:500;letter-spacing:.02em;text-decoration:none}
-
-.hero{position:relative;padding:12vh 0 14vh;overflow:hidden;background:var(--sage)}
-.hero h1{font-family:var(--serif);font-weight:400;font-size:clamp(54px,9.4vw,136px);line-height:.98;letter-spacing:-.015em;max-width:11ch}
-.hero h1 em{font-style:italic;color:var(--forest)}
-.hero .row{display:flex;flex-wrap:wrap;gap:36px 80px;align-items:flex-end;margin-top:64px}
-.hero p{max-width:400px;color:var(--mute);font-size:18px}
-.court{position:absolute;right:-60px;top:6vh;width:min(46vw,520px);height:auto;opacity:.3;pointer-events:none}
-
-.sec{border-top:1px solid var(--line);padding:88px 0}
-.grid{display:grid;grid-template-columns:3fr 8fr;gap:40px}
-.grid>.label{padding-top:10px}
-h2{font-family:var(--serif);font-weight:400;font-size:clamp(34px,4.4vw,56px);line-height:1.08;letter-spacing:-.01em;margin-bottom:40px;max-width:16ch}
-h2 em{font-style:italic;color:var(--forest)}
-
-.intro p{font-family:var(--serif);font-size:clamp(25px,3vw,36px);line-height:1.3;max-width:32ch}
-.intro p+p{margin-top:24px;color:var(--mute)}
-
-ol{list-style:none}
-ol li{display:grid;grid-template-columns:64px 1fr;gap:8px 16px;padding:28px 0;border-top:1px solid var(--line)}
-ol li:last-child{border-bottom:1px solid var(--line)}
-ol .n{font-family:var(--serif);font-style:italic;font-size:24px;color:var(--forest);padding-top:4px}
-ol h3{font-family:var(--serif);font-weight:500;font-size:30px;line-height:1.15}
-ol p{grid-column:2;color:var(--mute);max-width:46ch}
-
-.prin div{font-family:var(--serif);font-size:clamp(26px,3vw,36px);line-height:1.25;padding:26px 0;border-top:1px solid var(--line)}
-.prin div:last-of-type{border-bottom:1px solid var(--line)}
-.prin small{display:block;margin-top:28px;color:var(--mute);font-size:15px}
-
-details{border-top:1px solid var(--line);padding:24px 0}
-details:last-of-type{border-bottom:1px solid var(--line)}
-summary{cursor:pointer;list-style:none;display:flex;justify-content:space-between;gap:24px;font-family:var(--serif);font-size:26px;line-height:1.2}
-summary::-webkit-details-marker{display:none}
-summary::after{content:"+";font-family:var(--sans);font-weight:400;font-size:22px;color:var(--forest)}
-details[open] summary::after{content:"–"}
-details p{margin-top:14px;max-width:56ch;color:var(--mute)}
-
-.cta{background:var(--deep);color:var(--bg);padding:130px 0;text-align:left}
-.cta h2{max-width:12ch;font-size:clamp(46px,7vw,100px);margin-bottom:48px}
-.cta .btn{background:var(--bg);color:var(--deep)}
-.cta h2 em{color:#C9DDB8}
-.sage{background:var(--sage);border-top:0}
-.cta p{margin-top:28px;color:rgba(245,241,232,.6);font-size:15px}
-
-.legal{padding:72px 0 40px}
-.legal h4{font-family:var(--serif);font-weight:500;font-size:24px;margin-bottom:10px}
-.legal p{max-width:70ch;color:var(--mute);font-size:14.5px;line-height:1.7;margin-bottom:36px}
-footer{border-top:1px solid var(--line);padding:32px 0 48px;font-size:13px;color:var(--mute)}
-footer .wrap{display:flex;flex-wrap:wrap;gap:16px 36px;justify-content:space-between}
-footer a{text-decoration:none;margin-right:24px}
-footer a:hover{color:var(--ink)}
-
-@media(max-width:820px){
- .wrap{padding:0 24px}
- .grid{grid-template-columns:1fr;gap:20px}
- .sec{padding:64px 0}
- .hero{padding:8vh 0 10vh}
- .court{opacity:.1;width:80vw;right:-25vw}
- ol li{grid-template-columns:44px 1fr}
- .cta{padding:90px 0}
+/* Conceito: quadra de saibro vista de cima, em blocos. Fundo claro e neutro, blocos arredondados de tamanhos diferentes,
+   um bloco verde-quadra com a rede de bolinhas e o amarelo de bola de tênis só onde há ação (disponível agora, piloto, botão principal). */
+:root{
+  color-scheme:light;
+  --bg:#FFFFFF; --tile:#FFFFFF; --ink:#0A0A0A; --mute:#737373;
+  --line:#E5E5E5; --line-strong:#D4D4D4;
+  --green:#14583A; --on-green:#F4F8EE; --signal:#DDF247; --signal-ink:#17210A;
+  --field:#F5F5F5; --warn:#DC2626; --on-bg:#171717; --on-fg:#FAFAFA; --radius:10px; --shadow:0 1px 2px rgba(0,0,0,.05);
+  --head:'Geist','Inter',system-ui,sans-serif; --sans:'Geist','Inter',system-ui,sans-serif;
 }
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#0A0A0A; --tile:#171717; --ink:#FAFAFA; --mute:#A3A3A3;
+  --line:rgba(255,255,255,.1); --line-strong:rgba(255,255,255,.2);
+  --green:#17613F; --field:#262626; --warn:#F87171; --on-bg:#E5E5E5; --on-fg:#171717; --shadow:none; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0A0A0A; --tile:#171717; --ink:#FAFAFA; --mute:#A3A3A3;
+  --line:rgba(255,255,255,.1); --line-strong:rgba(255,255,255,.2);
+  --green:#17613F; --field:#262626; --warn:#F87171; --on-bg:#E5E5E5; --on-fg:#171717; --shadow:none; color-scheme:dark}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:15px;line-height:1.55;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+.wrap{max-width:1160px;margin-inline:auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+button,input,select{font:inherit;color:inherit}
+button{cursor:pointer}
+:focus-visible{outline:2px solid var(--green);outline-offset:3px}
+.label{font-size:12px;color:var(--mute);font-weight:500;margin:0}
+
+/* barra */
+.bar{position:sticky;top:env(safe-area-inset-top,0px);background:color-mix(in srgb,var(--bg) 86%,transparent);backdrop-filter:blur(12px);z-index:5}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:var(--bg);z-index:10}
+.mark-img{width:30px;height:30px;border-radius:50%;display:block}
+.bar-r{display:flex;align-items:center;gap:10px}
+.ig{display:grid;place-items:center;width:36px;height:36px;border-radius:8px;border:1px solid var(--line-strong);color:var(--ink);background:var(--tile)}
+.ig:hover{background:var(--field)}
+.ig svg{width:18px;height:18px}
+.t-court #hero-cta .btn{background:transparent;color:var(--on-green);border:1px solid rgba(255,255,255,.4)}
+.t-court #pre{text-decoration:none}
+.bar-in{display:flex;align-items:center;justify-content:space-between;gap:12px;padding-block:14px}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;font-family:var(--head);font-size:22px;font-weight:800;letter-spacing:-.03em}
+.brand .mark{width:36px;height:36px;border-radius:11px;background:var(--green);display:grid;place-items:center}
+.brand svg{width:22px;height:22px;color:var(--signal)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border:1px solid var(--line-strong);background:var(--tile);color:var(--ink);border-radius:999px;padding:10px 18px;font-size:13.5px;font-weight:600;text-decoration:none;transition:transform .15s,background .15s,color .15s,border-color .15s}
+.btn:hover{border-color:var(--ink)}
+.btn:active{transform:scale(.97)}
+.btn.solid{background:var(--on-bg);color:var(--on-fg);border-color:var(--on-bg)}
+.btn.solid:hover{background:var(--green);border-color:var(--green);color:#fff}
+.btn[disabled]{opacity:.45;cursor:not-allowed}
+.btn.small{padding:7px 14px;font-size:12.5px}
+.me-chip{display:flex;align-items:center;gap:10px;padding:4px 16px 4px 4px;border:1px solid var(--line-strong);border-radius:999px;background:var(--tile);font-weight:600}
+.me-chip:hover{border-color:var(--ink)}
+.me-chip .dot{width:30px;height:30px;border-radius:50%;object-fit:cover;background:var(--signal);color:var(--signal-ink);display:grid;place-items:center;font-family:var(--head);font-weight:700;font-size:13px}
+
+/* aviso exemplo */
+.banner{background:var(--signal);color:var(--signal-ink);font-size:13px;font-weight:600}
+.banner .wrap{display:flex;flex-wrap:wrap;gap:6px 16px;align-items:center;justify-content:space-between;padding-block:9px}
+.banner button{background:none;border:0;text-decoration:underline;color:inherit;font-weight:700;padding:0}
+
+/* blocos do topo */
+.bento{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:14px;padding-top:10px}
+.tile{background:var(--tile);border:1px solid var(--line);border-radius:28px;padding:26px;position:relative;overflow:hidden;min-width:0}
+.t-court{grid-column:span 7;grid-row:span 2;background:var(--green);border-color:transparent;color:var(--on-green);min-height:460px;display:flex;flex-direction:column;justify-content:flex-end;padding:34px}
+.t-pilot{grid-column:span 5;background:var(--signal);border-color:transparent;color:var(--signal-ink);display:flex;flex-direction:column;justify-content:space-between;gap:18px}
+.t-how{grid-column:span 5}
+.chip{display:inline-block;border-radius:999px;padding:5px 12px;font-size:12.5px;font-weight:600}
+.t-court .chip{background:rgba(244,248,238,.14);color:var(--on-green);align-self:flex-start;margin-bottom:auto;position:relative;z-index:1}
+h1{font-family:var(--head);font-weight:800;font-size:clamp(52px,8.4vw,112px);line-height:.9;letter-spacing:-.04em;margin:28px 0 18px;text-wrap:balance;position:relative;z-index:1}
+h1 span{color:var(--signal)}
+.sub{max-width:40ch;font-size:17px;margin:0 0 22px;color:rgba(244,248,238,.82);position:relative;z-index:1}
+.cta{display:flex;flex-wrap:wrap;gap:10px;position:relative;z-index:1}
+.cta:empty{display:none}
+.t-court .btn{background:var(--signal);color:var(--signal-ink);border-color:var(--signal);font-size:14.5px;padding:12px 22px}
+.t-court .btn:hover{background:#fff;border-color:#fff;color:var(--green)}
+.t-pilot p.pilot-big{font-family:var(--head);font-weight:800;font-size:clamp(84px,11vw,132px);line-height:.8;letter-spacing:-.05em;margin:0}
+.t-pilot p.pilot-big small{display:block;font-size:16px;line-height:1.2;letter-spacing:0;margin:10px 0 0;font-weight:600}
+.t-pilot h2{font-size:22px;margin:0 0 6px}
+.t-pilot p{margin:0;font-size:14.5px}
+.hoods{display:flex;flex-wrap:wrap;gap:6px}
+.hoods span{display:inline-flex;align-items:center;gap:7px;border:1.5px solid var(--signal-ink);border-radius:999px;padding:4px 12px 4px 9px;font-size:12.5px;font-weight:600}
+.hoods svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:1.4;stroke-linecap:round;stroke-linejoin:round}
+.t-how h2{font-size:22px;margin:0 0 14px}
+.steps{list-style:none;margin:0;padding:0;display:grid;gap:12px}
+.steps li{display:grid;grid-template-columns:30px minmax(0,1fr);gap:12px;align-items:start;font-size:14.5px}
+.steps b{width:30px;height:30px;border-radius:50%;background:var(--field);border:1px solid var(--line);display:grid;place-items:center;font-family:var(--head);font-size:14px}
+.steps span{padding-top:4px}
+.live{display:flex;flex-wrap:wrap;gap:8px 20px;font-size:13px;color:rgba(244,248,238,.85);margin:18px 0 0;position:relative;z-index:1}
+.live b{color:#fff;font-weight:700;font-variant-numeric:tabular-nums}
+.pulse{display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--green);margin-right:8px;box-shadow:0 0 0 0 rgba(23,97,63,.55);animation:pulse 2.2s infinite}
+.live .pulse{background:var(--signal)}
+.pulse.off{background:var(--mute);animation:none;box-shadow:none}
+@keyframes pulse{70%{box-shadow:0 0 0 9px rgba(23,97,63,0)}100%{box-shadow:0 0 0 0 rgba(23,97,63,0)}}
+#balls{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:0}
+.court{position:absolute;right:-8%;top:50%;transform:translateY(-52%);height:128%;width:auto;pointer-events:none}
+.court *{stroke:#fff;stroke-opacity:.26;stroke-width:1.6;fill:none;stroke-dasharray:1;stroke-dashoffset:0;animation:draw 2.8s cubic-bezier(.6,.1,.2,1) backwards}
+.court *:nth-child(2){animation-delay:.15s}.court *:nth-child(3){animation-delay:.3s}.court *:nth-child(4){animation-delay:.45s}.court *:nth-child(5){animation-delay:.6s}.court *:nth-child(6){animation-delay:.75s}.court *:nth-child(7){animation-delay:.9s}
+@keyframes draw{from{stroke-dashoffset:1}to{stroke-dashoffset:0}}
+
+section{padding-block:44px 0}
+.sec-h{display:flex;align-items:baseline;justify-content:space-between;gap:12px;margin-bottom:16px;flex-wrap:wrap}
+h2{font-family:var(--head);font-weight:800;font-size:clamp(26px,3.6vw,38px);line-height:1.05;letter-spacing:-.03em;margin:0}
+h2 em{font-style:normal;color:var(--mute)}
+.sec-h .label{background:var(--tile);border:1px solid var(--line);border-radius:999px;padding:4px 12px}
+
+/* minha disponibilidade */
+.mine{display:flex;flex-wrap:wrap;gap:16px 28px;align-items:center;justify-content:space-between;border:1px solid var(--line);border-radius:28px;background:var(--tile);padding:22px 26px;margin-top:14px}
+.mine p{margin:0}
+.mine .st{font-family:var(--head);font-weight:700;font-size:22px;line-height:1.2;letter-spacing:-.02em;margin-top:4px}
+.mine .btns{display:flex;flex-wrap:wrap;gap:8px}
+.mine.on{background:var(--signal);border-color:transparent;color:var(--signal-ink)}
+.mine.on .label{color:var(--signal-ink);opacity:.7}
+.mine.on .btn{background:rgba(255,255,255,.55);border-color:transparent;color:var(--signal-ink)}
+.mine.on .btn:hover{background:#fff}
+
+/* horários */
+.slots{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}
+.slot{background:var(--tile);border:1px solid var(--line);border-radius:24px;padding:18px 20px;text-align:left;display:grid;gap:6px;transition:transform .15s,background .18s,color .18s,border-color .18s}
+.slot:hover{border-color:var(--ink)}
+.slot:active{transform:scale(.98)}
+.slot[aria-pressed="true"]{background:var(--green);color:var(--on-green);border-color:transparent}
+.slot .n{font-family:var(--head);font-weight:800;font-size:46px;line-height:1;letter-spacing:-.04em;font-variant-numeric:tabular-nums}
+.slot .t{font-size:14px;font-weight:600}
+.slot .s{font-size:12px;color:var(--mute)}
+.slot[aria-pressed="true"] .s{color:rgba(244,248,238,.75)}
+.slot .bar-b{height:5px;background:var(--line);border-radius:3px;overflow:hidden;margin-top:6px}
+.slot .bar-b i{display:block;height:100%;background:var(--green);border-radius:3px;transition:width .4s}
+.slot[aria-pressed="true"] .bar-b{background:rgba(255,255,255,.2)}
+.slot[aria-pressed="true"] .bar-b i{background:var(--signal)}
+.hint{color:var(--mute);font-size:13px;margin:12px 0 0}
+
+/* filtros */
+.controls{display:flex;flex-wrap:wrap;gap:10px 14px;align-items:center}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.pill{border:1px solid var(--line);background:var(--tile);border-radius:999px;padding:8px 16px;font-size:13px;font-weight:500;transition:all .15s}
+.pill:hover{border-color:var(--ink)}
+.pill[aria-pressed="true"]{background:var(--on-bg);color:var(--on-fg);border-color:var(--on-bg)}
+select{background:var(--tile);border:1px solid var(--line);border-radius:999px;padding:8px 36px 8px 16px;font-size:13px;font-weight:500;appearance:none;background-image:linear-gradient(45deg,transparent 50%,var(--mute) 50%),linear-gradient(135deg,var(--mute) 50%,transparent 50%);background-position:calc(100% - 19px) 55%,calc(100% - 14px) 55%;background-size:5px 5px;background-repeat:no-repeat}
+select option{background:var(--tile);color:var(--ink)}
+
+/* cartões */
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,340px),1fr));gap:14px}
+.card{position:relative;display:grid;grid-template-columns:96px minmax(0,1fr);gap:18px;padding:18px;border:1px solid var(--line);border-radius:28px;background:var(--tile);min-width:0}
+.card.now{box-shadow:inset 0 0 0 2px var(--green);border-color:transparent}
+.photo{width:96px;height:124px;object-fit:cover;border-radius:18px;background:var(--signal);display:grid;place-items:center;font-family:var(--head);font-weight:800;font-size:36px;letter-spacing:-.03em;color:var(--signal-ink)}
+.card .meta{display:flex;justify-content:space-between;align-items:center;gap:8px;margin-bottom:6px}
+.card .num{white-space:nowrap;font-size:11.5px;color:var(--mute);font-variant-numeric:tabular-nums;font-weight:600}
+.card .host{font-size:11px;font-weight:700;background:var(--field);border:1px solid var(--line);border-radius:999px;padding:2px 9px}
+.card h3{font-family:var(--head);font-weight:700;font-size:22px;line-height:1.1;letter-spacing:-.02em;margin:0 0 2px;overflow-wrap:anywhere}
+.card .bld{color:var(--mute);font-size:13px;margin:0 0 10px;overflow-wrap:anywhere}
+.lvl{display:flex;align-items:center;gap:8px;font-size:12.5px;font-weight:500;margin-bottom:6px}
+.lvl .b{display:flex;gap:3px}
+.lvl .b i{width:16px;height:5px;border-radius:3px;background:var(--line-strong)}
+.lvl .b i.f{background:var(--green)}
+.when{font-size:12.5px;color:var(--mute);margin:0}
+.card .foot{grid-column:1/-1;display:flex;flex-wrap:wrap;gap:10px 14px;align-items:center;justify-content:space-between;border-top:1px solid var(--line);padding-top:14px}
+.status{font-size:12.5px;display:flex;align-items:center;gap:8px;color:var(--mute)}
+.card.now .status{background:var(--signal);color:var(--signal-ink);font-weight:600;border-radius:999px;padding:4px 12px}
+.ex{position:absolute;top:12px;right:14px;font-size:10.5px;font-weight:600;border:1px solid var(--line-strong);border-radius:999px;padding:1px 8px;color:var(--mute);background:var(--tile)}
+
+.empty{border:1.5px dashed var(--line-strong);border-radius:28px;padding:48px 24px;text-align:center;background:var(--tile)}
+.empty h3{font-family:var(--head);font-weight:800;letter-spacing:-.03em;font-size:clamp(30px,5vw,48px);margin:0 0 10px;line-height:1}
+.empty p{color:var(--mute);max-width:46ch;margin:0 auto 22px}
+.empty .row{display:flex;flex-wrap:wrap;gap:10px;justify-content:center}
+.quiet{color:var(--mute);margin:0 0 4px}
+footer{padding-block:40px;color:var(--mute);font-size:12.5px;margin-top:56px}
+footer .wrap{display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-between}
+
+/* diálogo */
+dialog{border:1px solid var(--line);background:var(--tile);color:var(--ink);border-radius:28px;padding:0;width:min(560px,calc(100% - 24px));max-height:calc(100% - 24px)}
+dialog::backdrop{background:rgba(8,14,10,.55);backdrop-filter:blur(4px)}
+.dlg{padding:28px;display:grid;gap:18px}
+.dlg h2{font-size:30px}
+.dlg label.f{display:grid;gap:6px;font-size:12.5px;color:var(--mute);font-weight:600}
+.dlg input[type=text],.dlg input[type=tel]{background:var(--field);border:1px solid var(--line);border-radius:14px;padding:12px 14px;font-size:15px;color:var(--ink);width:100%}
+.dlg select{background-color:var(--field);border-radius:14px;padding:12px 36px 12px 14px;font-size:15px;width:100%;font-weight:400;color:var(--ink)}
+.dlg input:focus,.dlg select:focus{border-color:var(--green);outline:none}
+fieldset{border:0;margin:0;padding:0;display:grid;gap:8px}
+legend{padding:0;margin-bottom:8px;font-size:12.5px;color:var(--mute);font-weight:600}
+.opts{display:flex;flex-wrap:wrap;gap:8px}
+.opt{position:relative}
+.opt input{position:absolute;opacity:0;inset:0;cursor:pointer;margin:0}
+.opt span{display:block;border:1px solid var(--line);background:var(--field);border-radius:999px;padding:8px 15px;font-size:13px;font-weight:500;transition:all .15s}
+.opt input:checked+span{background:var(--on-bg);color:var(--on-fg);border-color:var(--on-bg)}
+.opt input:focus-visible+span{outline:2px solid var(--green);outline-offset:2px}
+.check{display:flex;gap:10px;align-items:flex-start;font-size:13.5px}
+.check input{margin-top:4px;accent-color:var(--green)}
+.photo-row{display:flex;gap:16px;align-items:center}
+.photo-row .photo{width:72px;height:92px;font-size:28px;border-radius:16px;flex-shrink:0}
+.err{color:var(--warn);font-size:13px;margin:0;min-height:1em}
+.dlg-actions{display:flex;flex-wrap:wrap;gap:10px;justify-content:space-between;align-items:center}
+.dlg-actions .r{display:flex;gap:10px}
+.link-danger{background:none;border:0;color:var(--mute);text-decoration:underline;font-size:13px;padding:0}
+.link-danger.arm{color:var(--warn)}
+
+#toast{position:fixed;left:50%;bottom:max(24px,env(safe-area-inset-bottom,0px));transform:translate(-50%,20px);background:var(--on-bg);color:var(--on-fg);padding:12px 22px;border-radius:999px;font-size:13.5px;font-weight:600;opacity:0;pointer-events:none;transition:all .25s;z-index:30;max-width:calc(100% - 32px);text-align:center}
+#toast.on{opacity:1;transform:translate(-50%,0)}
+
+/* dores */
+.pains-wrap{background:var(--tile);border:1px solid var(--line);border-radius:28px;padding:8px 26px;overflow-x:auto}
+.pains{width:100%;border-collapse:collapse;min-width:0}
+.pains th{text-align:left;font-family:var(--head);font-weight:700;font-size:15px;padding:16px 16px 14px 0;border-bottom:1px solid var(--line-strong)}
+.pains td{padding:15px 16px 15px 0;border-bottom:1px solid var(--line);font-size:15.5px;vertical-align:top;width:50%}
+.pains tbody tr:last-child td{border-bottom:0}
+.pains td:first-child{font-weight:500}
+.pains td:last-child{font-weight:600;color:var(--green);padding-right:0}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]) .pains td:last-child{color:var(--signal)}}
+:root[data-theme="dark"] .pains td:last-child{color:var(--signal)}
+@media(max-width:560px){.pains-wrap{padding:4px 18px;border-radius:24px}.pains th,.pains td{font-size:14px;padding-right:10px}}
+/* reputação, aprovação, avaliação */
+.rep{display:flex;flex-wrap:wrap;align-items:center;gap:4px 10px;font-size:12.5px;margin:0 0 6px}
+.rep b{font-weight:700}
+.rep .star{color:#B58A00}
+.rep .new{color:var(--mute)}
+.rep .ns{color:var(--warn);font-weight:600}
+.pendbox{margin-top:14px;border:1.5px dashed var(--line-strong);border-radius:28px;padding:22px 24px;background:var(--tile)}
+.pendbox h2{font-size:22px;margin:0 0 4px}
+.pendbox .grid{margin-top:16px}
+.acts{display:flex;flex-wrap:wrap;gap:8px}
+.stars{display:flex;gap:6px}
+.stars button{width:46px;height:46px;border-radius:14px;border:1px solid var(--line);background:var(--field);font-family:var(--head);font-weight:800;font-size:18px}
+.stars button[aria-pressed="true"]{background:var(--signal);color:var(--signal-ink);border-color:var(--signal)}
+.legal-t h3{font-family:var(--head);font-weight:700;font-size:18px;margin:18px 0 6px;letter-spacing:-.02em}
+.legal-t p{margin:0 0 10px;font-size:14px;color:var(--mute);line-height:1.6}
+.linkbtn{background:none;border:0;padding:0;color:inherit;text-decoration:underline;cursor:pointer;font-size:inherit}
+@media(max-width:900px){
+  .t-court{grid-column:1/-1;grid-row:auto;min-height:420px}
+  .t-pilot,.t-how{grid-column:1/-1}
+}
+@media(max-width:760px){
+  .slots{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .tile{border-radius:24px;padding:22px}
+  .t-court{padding:24px}
+  .court{right:-34%;opacity:.8}
+  .card{grid-template-columns:84px minmax(0,1fr);gap:14px;border-radius:24px}
+  .photo{width:84px;height:110px}
+}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+
+/* ===== camada shadcn/ui: neutros, raio de 10px, bordas finas, sombra mínima, anel de foco suave ===== */
+body{font-size:14px;letter-spacing:-.006em}
+:focus-visible{outline:3px solid color-mix(in srgb,var(--ink) 22%,transparent);outline-offset:2px;border-radius:8px}
+h2{font-weight:600;font-size:clamp(20px,2.3vw,24px);letter-spacing:-.025em}
+h1{font-weight:600;letter-spacing:-.05em}
+.label{font-weight:500}
+.bar{border-bottom:1px solid var(--line)}
+.brand{font-weight:600;letter-spacing:-.03em;font-size:18px}
+.brand .mark{width:30px;height:30px;border-radius:8px}
+.brand svg{width:18px;height:18px}
+.btn{border-radius:8px;height:36px;padding:0 16px;font-size:14px;font-weight:500;background:var(--tile);box-shadow:var(--shadow)}
+.btn:hover{background:var(--field);border-color:var(--line-strong)}
+.btn.solid{background:var(--on-bg);color:var(--on-fg);border-color:var(--on-bg)}
+.btn.solid:hover{background:var(--on-bg);opacity:.9;border-color:var(--on-bg);color:var(--on-fg)}
+.btn.small{height:32px;padding:0 12px;font-size:13px}
+.t-court .btn{height:40px;border-radius:8px;font-size:14px;padding:0 18px;box-shadow:none}
+.t-court .btn:hover{background:var(--signal);opacity:.92;color:var(--signal-ink);border-color:var(--signal)}
+.me-chip{border-radius:8px;height:36px;box-shadow:var(--shadow);padding:0 12px 0 5px;font-weight:500;font-size:14px}
+.me-chip:hover{background:var(--field);border-color:var(--line-strong)}
+.me-chip .dot{width:26px;height:26px;border-radius:6px}
+.bento{gap:12px}
+.tile,.mine,.slot,.card,.pains-wrap,.pendbox,.empty{border-radius:14px}
+.tile,.mine,.slot,.card,.pains-wrap{box-shadow:var(--shadow)}
+.t-court,.t-pilot{box-shadow:none}
+.tile{padding:24px}
+.t-court{padding:32px}
+.chip{border-radius:6px;font-weight:500;font-size:12px;padding:4px 10px}
+.t-pilot h2,.t-how h2{font-size:18px;font-weight:600;letter-spacing:-.02em}
+.t-pilot p.pilot-big{font-weight:600}
+.hoods span{border-radius:6px;border-width:1px;font-weight:500;padding:3px 10px 3px 7px}
+.how3{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.how3 li{border:1px solid var(--line);border-radius:14px;background:var(--tile);padding:18px;display:grid;gap:12px;font-size:14.5px;align-content:start}
+.how3 b{width:28px;height:28px;border-radius:8px;background:var(--field);border:1px solid var(--line);display:grid;place-items:center;font-family:var(--head);font-size:14px;font-weight:600}
+@media(max-width:700px){.how3{grid-template-columns:1fr}}
+.steps b{border-radius:8px;width:28px;height:28px;font-weight:600}
+.steps li{grid-template-columns:28px minmax(0,1fr)}
+.sec-h .label{background:var(--field);border:0;border-radius:6px;padding:3px 9px;font-weight:500}
+h2 em{font-weight:600}
+.mine{padding:20px 22px}
+.mine .st{font-weight:600;font-size:18px;letter-spacing:-.02em}
+.slot{padding:16px 18px;gap:4px}
+.slot .n{font-weight:600;font-size:34px;letter-spacing:-.04em}
+.slot .t{font-weight:500}
+.slot .bar-b{height:4px}
+.pill{border-radius:8px;height:34px;padding:0 14px;font-size:13px;font-weight:500;box-shadow:var(--shadow)}
+.pill:hover{background:var(--field)}
+.pill[aria-pressed="true"]{background:var(--field);color:var(--ink);border-color:var(--ink);font-weight:600}
+select{border-radius:8px;height:34px;padding:0 34px 0 12px;box-shadow:var(--shadow);font-weight:500}
+.photo{border-radius:10px;font-weight:600}
+.card{padding:16px;gap:16px}
+.card h3{font-weight:600;font-size:18px;letter-spacing:-.02em}
+.card .host,.ex{border-radius:6px;font-weight:500}
+.card .num{font-weight:500}
+.lvl .b i{border-radius:2px}
+.card.now{box-shadow:inset 0 0 0 1.5px var(--green)}
+.card.now .status{border-radius:6px;font-weight:500}
+.rep .star{color:#CA8A04}
+.pains-wrap{padding:0;overflow:hidden}
+.pains{border-collapse:separate;border-spacing:0}
+.pains th{padding:12px 20px;font-family:var(--sans);font-weight:500;font-size:13px;color:var(--mute);background:var(--field);border-bottom:1px solid var(--line)}
+.pains td{padding:14px 20px;font-size:14px;border-bottom:1px solid var(--line)}
+.pains tbody tr:hover td{background:color-mix(in srgb,var(--field) 55%,transparent)}
+.pains td:last-child{font-weight:500;padding-right:20px}
+.pains th:last-child{padding-right:20px}
+.empty{box-shadow:none}
+.empty h3{font-weight:600}
+.dlg{padding:24px}
+dialog{border-radius:12px;box-shadow:0 10px 38px -10px rgba(0,0,0,.35),0 10px 20px -15px rgba(0,0,0,.2)}
+dialog::backdrop{background:rgba(0,0,0,.5);backdrop-filter:none}
+.dlg h2{font-size:18px;font-weight:600;letter-spacing:-.02em}
+.dlg label.f,legend{font-size:13px;font-weight:500;color:var(--ink)}
+.dlg input[type=text],.dlg input[type=tel],.dlg select{background:transparent;border:1px solid var(--line-strong);border-radius:8px;height:38px;padding:0 12px;box-shadow:var(--shadow);font-size:14px}
+.dlg select{padding-right:34px}
+.dlg input:focus,.dlg select:focus{border-color:var(--ink);box-shadow:0 0 0 3px color-mix(in srgb,var(--ink) 15%,transparent)}
+.opt span{border-radius:8px;background:transparent;border-color:var(--line-strong);padding:7px 13px;box-shadow:var(--shadow)}
+.opt input:checked+span{background:var(--field);color:var(--ink);border-color:var(--ink);font-weight:600}
+.photo-row .photo{border-radius:10px}
+.stars button{border-radius:8px;font-weight:600}
+.legal-t h3{font-weight:600;font-size:15px}
+#toast{background:var(--tile);color:var(--ink);border:1px solid var(--line);border-radius:8px;box-shadow:0 10px 30px -10px rgba(0,0,0,.3);font-weight:500;padding:12px 18px;font-size:14px}
+.banner{font-weight:500}
+.ex{top:24px;right:auto;left:24px;background:var(--tile)}
+.pains-row{display:grid;grid-template-columns:minmax(0,1.4fr) minmax(0,1fr);gap:12px;align-items:stretch}
+.pains-row .pains-wrap{align-self:start}
+.pains th{padding:10px 16px;font-size:12px}
+.pains td{padding:11px 16px;font-size:13.5px}
+.pains th:last-child,.pains td:last-child{padding-right:16px}
+.vid{position:relative;border-radius:14px;overflow:hidden;background:var(--green);min-height:260px}
+.vid svg,.vid video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.vid video{object-position:38% 40%}
+.vid video{opacity:0;transition:opacity .6s}
+.vid video.on{opacity:1}
+.vid video.m{object-position:50% 40%}
+@media(max-width:900px){.pains-row{grid-template-columns:1fr}.vid{min-height:0;aspect-ratio:16/10}}
+.map{position:relative;height:150px;border-radius:10px;overflow:hidden;border:1px solid rgba(23,33,10,.14)}
+.map>svg{position:absolute;inset:0;width:100%;height:100%}
+.pin{position:absolute;transform:translate(-50%,-100%);display:inline-flex;align-items:center;gap:6px;background:#fff;color:#0A0A0A;border:1px solid rgba(0,0,0,.1);border-radius:999px;padding:5px 10px 5px 7px;font-size:12px;font-weight:600;white-space:nowrap;box-shadow:0 2px 6px rgba(0,0,0,.2);transition:transform .15s,background .15s,color .15s}
+.pin::after{content:"";position:absolute;left:50%;bottom:-4px;width:8px;height:8px;background:inherit;border-right:1px solid rgba(0,0,0,.1);border-bottom:1px solid rgba(0,0,0,.1);transform:translateX(-50%) rotate(45deg)}
+.pin:hover{transform:translate(-50%,-100%) scale(1.06)}
+.pin svg{width:15px;height:15px;fill:none;stroke:currentColor;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
+.pin b{background:var(--signal);color:var(--signal-ink);border-radius:999px;padding:0 6px;font-size:11px;line-height:17px}
+.pin.on{background:#171717;color:#fff;border-color:#171717}
+.pin.on::after{border-color:#171717}
+.map-hint{margin:0;font-size:12px;opacity:.7}
+.racket{display:inline-block;height:.99em;width:.6em;vertical-align:-.25em;margin-left:.04em;transform:rotate(9deg);transform-origin:50% 38%}
+.t-pilot p.pilot-big{padding-bottom:.18em}
+.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.plans{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.plan{background:var(--tile);border:1px solid var(--line);border-radius:14px;padding:22px;box-shadow:var(--shadow);display:flex;flex-direction:column;gap:6px;min-width:0}
+.plan .ph{display:flex;align-items:center;justify-content:space-between;gap:8px}
+.plan h3{font-family:var(--head);font-weight:600;font-size:18px;letter-spacing:-.02em;margin:0}
+.plan .for{margin:0 0 12px;color:var(--mute);font-size:13.5px}
+.plan .tag{font-size:11.5px;font-weight:500;border-radius:6px;padding:2px 8px;background:var(--field);color:var(--mute);border:1px solid var(--line)}
+.plan .tag.now{background:var(--signal);color:var(--signal-ink);border-color:transparent;font-weight:600}
+.plan ul{list-style:none;margin:0;padding:12px 0 0;border-top:1px solid var(--line);display:grid;gap:9px}
+.plan li{display:grid;grid-template-columns:16px minmax(0,1fr);gap:9px;font-size:13.5px;line-height:1.4}
+.plan li::before{content:"";width:14px;height:14px;margin-top:2px;background:var(--green);-webkit-mask:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'><path d='M20 6 9 17l-5-5'/></svg>") center/contain no-repeat;mask:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'><path d='M20 6 9 17l-5-5'/></svg>") center/contain no-repeat}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]) .plan li::before{background:var(--signal)}}
+:root[data-theme="dark"] .plan li::before{background:var(--signal)}
+@media(max-width:900px){.plans{grid-template-columns:1fr}}
+@media(max-width:760px){.tile,.mine,.slot,.card,.pains-wrap,.pendbox,.empty{border-radius:12px}.t-court{padding:22px}.tile{padding:20px}}
 </style>
+<style>/* Versão estática: a lista de sócios vem do banco, que ainda não está ligado. */
+#pend,#mine,#slots-sec,#controls-sec,#list-sec,#banner{display:none!important}</style>
 </head>
 <body>
 
-<header>
-  <div class="wrap">
-    <a class="mark" href="#">Saque</a>
-    <a class="link" href="https://tally.so/r/4a7X8o">Solicitar convite</a>
-  </div>
-</header>
 
-<section class="hero">
-  <svg class="court" viewBox="0 0 440 760" fill="none" stroke="#1F5C3D" stroke-width="1.5" aria-hidden="true"><rect x="1" y="1" width="438" height="758"/><line x1="55" y1="1" x2="55" y2="759"/><line x1="385" y1="1" x2="385" y2="759"/><line x1="1" y1="380" x2="439" y2="380"/><line x1="55" y1="175" x2="385" y2="175"/><line x1="55" y1="585" x2="385" y2="585"/><line x1="220" y1="175" x2="220" y2="585"/></svg>
-  <div class="wrap">
-    <h1>Tênis entre <em>vizinhos.</em></h1>
-    <div class="row">
-      <p>Jogue nas quadras do bairro, sem pagar aluguel por hora. Parceiros no seu nível, no seu horário, entre vizinhos.</p>
-      <a class="btn" href="https://tally.so/r/4a7X8o">Solicitar convite</a>
-    </div>
+<header class="bar"><div class="wrap bar-in">
+  <a class="brand" href="#" aria-label="Saque, início">
+    <img class="mark-img" src="media/logo.png" alt="" width="30" height="30">
+    <span>Saque</span>
+  </a>
+  <div class="bar-r">
+    <a class="ig" href="https://www.instagram.com/saque.club/" target="_blank" rel="noopener noreferrer" aria-label="Instagram do Saque (@saque.club)" title="@saque.club"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r=".9" fill="currentColor" stroke="none"/></svg></a>
+    <div id="who"></div>
   </div>
-</section>
+</div></header>
+<div id="banner"></div>
 
-<section class="sec" id="problema">
-  <div class="wrap grid">
-    <div class="label">O problema</div>
-    <div class="prin">
-      <div>Quem tem quadra paga por ela todo mês no condomínio, e quase não joga.</div>
-      <div>Quem não tem paga caro por hora, e ainda disputa horário.</div>
-      <div>Enquanto isso, as quadras do bairro ficam vazias de manhã, e os vizinhos nunca se encontram.</div>
-    </div>
+<main>
+<div class="wrap bento">
+  <div class="tile t-court" id="t-court">
+    <canvas id="balls" aria-hidden="true"></canvas>
+    <svg class="court" viewBox="0 0 440 760" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
+    <rect pathLength="1" x="2" y="2" width="436" height="756"/>
+    <line pathLength="1" x1="57" y1="2" x2="57" y2="758"/>
+    <line pathLength="1" x1="383" y1="2" x2="383" y2="758"/>
+    <line pathLength="1" x1="2" y1="380" x2="438" y2="380"/>
+    <line pathLength="1" x1="57" y1="175" x2="383" y2="175"/>
+    <line pathLength="1" x1="57" y1="585" x2="383" y2="585"/>
+    <line pathLength="1" x1="220" y1="175" x2="220" y2="585"/>
+  </svg>
+    <h1>Quem joga <span>hoje?</span></h1>
+    <p class="sub">Encontre parceiros de tênis do seu nível, perto de você, na hora que você quiser.</p>
+    <div class="cta"><a class="btn" id="pre" href="https://tally.so/r/4a7X8o" target="_blank" rel="noopener noreferrer">Pré-cadastro</a><span id="hero-cta" style="display:contents"></span></div>
+    <p class="live" id="live"></p>
   </div>
-</section>
-
-<section class="sec intro">
-  <div class="wrap grid">
-    <div class="label">A ideia</div>
+  <div class="tile t-pilot">
     <div>
-      <p>O Saque troca o aluguel pela reciprocidade entre vizinhos.</p>
-      <p>Você ganha acesso às quadras dos prédios do bairro e, quando a sua estiver livre, recebe alguém no seu nível. Uma mensalidade única paga o que é realmente difícil de achar: o parceiro certo, na hora certa.</p>
+      <h2>Piloto</h2>
+      <p>Começamos em três bairros. Quem entrar agora não paga nada.</p>
     </div>
+    <p class="pilot-big"><span class="sr-only">50 cadastros grátis</span><span aria-hidden="true">5<svg class="racket" viewBox="0 0 70 116" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><ellipse cx="35" cy="44" rx="28" ry="38" stroke-width="10"/><g stroke-width="2.2"><path d="M24 12v64M35 8v72M46 12v64M12 24h46M9 44h52M12 64h46"/></g><path d="M25 85 35 98 45 85" stroke-width="7"/><rect x="30" y="96" width="10" height="18" rx="5" fill="currentColor" stroke="none"/></svg><small>cadastros grátis</small></span></p>
+    <div class="map" role="group" aria-label="Mapa ilustrativo dos bairros do piloto. Toque num bairro para filtrar os sócios.">
+      <svg viewBox="0 0 300 160" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+        <rect width="300" height="160" fill="#F5F9D8"/>
+        <g fill="#D3E59B"><path d="M8 118q30-24 62-6 22 16-6 34-42 12-56-28z"/><path d="M208 18q42-18 74 10 10 26-26 32-42 6-48-42z"/></g>
+        <g fill="none" stroke="#BCD276" stroke-width="1.1"><path d="M112 44q40-30 88 0"/><path d="M102 56q50-40 108 0"/><path d="M94 68q58-50 124 0"/></g>
+        <g fill="none" stroke="#fff" stroke-linecap="round"><path d="M0 100C80 90 140 120 300 80" stroke-width="6"/><path d="M60 0C70 60 90 110 120 160" stroke-width="6"/><path d="M200 0C190 60 230 110 250 160" stroke-width="6"/><path d="M0 40 300 55M0 140l300-10M150 0l10 160" stroke-width="3"/></g>
+      </svg>
+      <div id="map-pins"></div>
+    </div>
+    <p class="map-hint">Os três bairros do piloto. Mapa ilustrativo.</p>
   </div>
-</section>
+  <div class="tile t-how">
+    <h2>Como funciona</h2>
+    <ol class="steps">
+      <li><b>1</b><span>Faça seu pré-cadastro com nome, prédio e nível, e diga quem te indicou.</span></li>
+      <li><b>2</b><span>Marque quando quer jogar.</span></li>
+      <li><b>3</b><span>Chame quem estiver livre pelo WhatsApp e combinem onde jogar.</span></li>
+    </ol>
+  </div>
+</div>
 
-<section class="sec" id="como-funciona">
-  <div class="wrap grid">
-    <div class="label">Como funciona</div>
+<div class="wrap">
+  <section id="pains" aria-labelledby="h-pains" style="padding-top:40px">
+    <div class="sec-h"><h2 id="h-pains">Você já pensou <em>isso?</em></h2></div>
+    <div class="pains-row">
+      <div class="pains-wrap"><table class="pains"><thead><tr><th scope="col">Dor</th><th scope="col">O que o clube entrega</th></tr></thead><tbody>
+        <tr><td>Não tenho com quem jogar</td><td>Acesso a uma rede de jogadores</td></tr>
+        <tr><td>Meus amigos não jogam tênis</td><td>Novas conexões com jogadores</td></tr>
+        <tr><td>Tenho dificuldade de achar alguém do meu nível</td><td>Partidas por nível técnico</td></tr>
+        <tr><td>Quero jogar mais vezes</td><td>Mais oportunidades de partidas</td></tr>
+        <tr><td>Quero conhecer pessoas na região</td><td>Comunidade local</td></tr>
+        <tr><td>Alugar quadra é caro</td><td>Jogue sem pagar aluguel</td></tr>
+      </tbody></table></div>
+      <div class="vid" id="vid" aria-hidden="true">
+        <svg viewBox="0 0 220 300" preserveAspectRatio="xMidYMid slice"><g fill="none" stroke="#fff" stroke-opacity=".28" stroke-width="1.6"><rect x="30" y="20" width="160" height="260"/><path d="M52 20v260M168 20v260M30 150h160M52 85h116M52 215h116M110 85v130"/></g></svg>
+        <video class="on" autoplay muted loop playsinline preload="auto" poster="media/poster.jpg" disablepictureinpicture><source src="media/quadra.mp4" type="video/mp4"></video>
+        <video class="m" muted playsinline preload="auto" poster="media/poster-homem.jpg" disablepictureinpicture><source src="media/homem.mp4" type="video/mp4"></video>
+      </div>
+    </div>
+  </section>
+  <section id="plans" aria-labelledby="h-plans" style="padding-top:40px">
+    <div class="sec-h"><h2 id="h-plans">Planos <em>do clube</em></h2></div>
+    <div class="plans">
+      <article class="plan">
+        <div class="ph"><h3>Sócio Fundador</h3><span class="tag now">Disponível</span></div>
+        <p class="for">Para os 50 primeiros do piloto.</p>
+        <ul><li>Sem pagar durante o piloto</li><li>Perfil e “Quem joga hoje?”</li><li>Convidar e responder convites</li><li>Avaliar e ser avaliado</li><li>Filtros por nível, bairro e horário</li><li>Selo de fundador no perfil</li></ul>
+      </article>
+      <article class="plan">
+        <div class="ph"><h3>Sócio</h3><span class="tag">Em breve</span></div>
+        <p class="for">Para quem entra depois do piloto.</p>
+        <ul><li>Perfil e “Quem joga hoje?”</li><li>Convidar e responder convites</li><li>Avaliar e ser avaliado</li><li>Filtros por nível, bairro e horário</li></ul>
+      </article>
+      <article class="plan">
+        <div class="ph"><h3>Premium</h3><span class="tag">Futuramente</span></div>
+        <p class="for">Para quem quer jogar mais e ir além.</p>
+        <ul><li>Tudo do Sócio</li><li>Jogue só com sócios de identidade validada</li><li>Convites ilimitados</li><li>Destaque nos filtros e no perfil</li><li>Marketplace de equipamentos</li><li>Sorteios entre os sócios</li><li>Conecte-se com professores e aulas avulsas</li></ul>
+      </article>
+    </div>
+    <p class="hint">Durante o piloto, os 50 primeiros cadastros aprovados entram como Sócio Fundador e não pagam. Os valores dos outros planos serão divulgados antes de qualquer cobrança.</p>
+  </section>
+  <div id="mine"></div>
+  <div id="pend"></div>
+  <section id="slots-sec" aria-labelledby="h-slots"></section>
+  <section id="controls-sec"></section>
+  <section id="list-sec" aria-live="polite"></section>
+</div>
+</main>
+
+<footer><div class="wrap"><span>Saque · <a href="https://www.instagram.com/saque.club/" target="_blank" rel="noopener noreferrer" style="color:inherit">@saque.club</a> · <button class="linkbtn" type="button" id="open-legal">Termo de uso e privacidade</button></span><span>O Saque conecta vizinhos. O jogo é entre vocês.</span></div></footer>
+
+<dialog id="dlg" aria-labelledby="dlg-t">
+  <form class="dlg" id="form" novalidate>
+    <h2 id="dlg-t">Seu perfil de sócio</h2>
+    <div class="photo-row">
+      <div class="photo" id="f-prev" aria-hidden="true"></div>
+      <div>
+        <button class="btn small" type="button" id="f-pick">Adicionar foto <span style="opacity:.6">(opcional)</span></button>
+        <input type="file" id="f-file" accept="image/*" hidden>
+        <p class="hint" style="margin:6px 0 0">Quem aparece com foto costuma receber mais convites para jogar, e os vizinhos te reconhecem na portaria. Sem foto, seu perfil aparece com as iniciais. Só sócios do clube veem sua foto, e você pode apagá-la quando quiser.</p>
+      </div>
+    </div>
+    <label class="f">NOME<input type="text" id="f-name" maxlength="60" autocomplete="name" placeholder="Nome e sobrenome"></label>
+    <label class="f">PRÉDIO<input type="text" id="f-bld" maxlength="60" list="bl" placeholder="Ex.: Ed. Jacarandá"></label>
+    <datalist id="bl"></datalist>
+    <label class="f">BAIRRO<select id="f-hood"><option value="">Selecione</option><option>Vale do Sereno</option><option>Vila da Serra</option><option>Belvedere</option></select></label>
+    <fieldset><legend>SEU NÍVEL</legend><div class="opts" id="f-level"></div></fieldset>
+    <fieldset><legend>QUANDO COSTUMA PODER JOGAR</legend><div class="opts" id="f-slots"></div></fieldset>
+    <label class="check"><input type="checkbox" id="f-host"><span>Meu prédio tem quadra e posso receber convidados nela.</span></label>
+    <label class="f">WHATSAPP (OPCIONAL)<input type="tel" id="f-wa" inputmode="tel" maxlength="20" placeholder="(31) 99999-9999"></label>
+    <label class="check"><input type="checkbox" id="f-share"><span>Permitir que outros sócios me chamem por esse WhatsApp. Ele aparece só para quem está no clube.</span></label>
+    <label class="f">QUEM TE INDICOU?<input type="text" id="f-ref" maxlength="80" autocomplete="off" placeholder="Nome e sobrenome de quem te indicou"></label>
+    <p class="hint" style="margin:-8px 0 0">O Saque só aceita por indicação. Informe um sócio ou vizinho que te conhece. O organizador confirma antes de aprovar.</p>
+    <label class="check"><input type="checkbox" id="f-terms"><span>Li e aceito o <button class="linkbtn" type="button" data-legal>termo de uso e a privacidade</button>. Entendo que o Saque só conecta vizinhos e que o jogo é por minha conta e risco.</span></label>
+    <p class="err" id="f-err" role="alert"></p>
+    <div class="dlg-actions">
+      <button type="button" class="link-danger" id="f-del" hidden>Sair do clube</button>
+      <div class="r"><button type="button" class="btn" id="f-cancel">Cancelar</button><button type="submit" class="btn solid" id="f-save">Salvar perfil</button></div>
+    </div>
+  </form>
+</dialog>
+<dialog id="legal" aria-labelledby="legal-h">
+  <div class="dlg legal-t">
+    <h2 id="legal-h">Termo de uso e privacidade</h2>
     <div>
-      <ol>
-        <li><span class="n">i.</span><h3>Cadastro</h3><p>Nome, prédio e uma foto de rosto. Leva dois minutos.</p></li>
-        <li><span class="n">ii.</span><h3>Pedido</h3><p>Uma mensagem no WhatsApp com o dia e a hora em que quer jogar.</p></li>
-        <li><span class="n">iii.</span><h3>Apresentação</h3><p>Sugerimos um parceiro no seu nível, com perfil e foto.</p></li>
-        <li><span class="n">iv.</span><h3>Jogo</h3><p>Na quadra do prédio dele. Na próxima vez, quem recebe é você.</p></li>
-      </ol>
+      <h3>Termo de uso</h3>
+      <p>O Saque é um serviço de conexão entre vizinhos que querem jogar tênis. Não somos donos, administradores nem responsáveis por nenhuma quadra, e não organizamos, supervisionamos nem garantimos nenhuma partida.</p>
+      <p>Ao aceitar, você declara que: (1) joga por conta e risco próprios e está apto fisicamente; (2) é responsável por seus atos e por seus convidados; (3) segue as regras do condomínio onde jogar, e quem recebe convidados é responsável por avisar a portaria; (4) isenta o Saque de responsabilidade por danos, lesões, perdas ou conflitos decorrentes do encontro entre participantes.</p>
+      <p>O acesso é só por indicação: no cadastro, você informa o nome e o sobrenome de quem te indicou, e o organizador confirma a indicação e o prédio antes de aprovar. O Saque pode recusar, suspender ou remover qualquer pessoa em caso de conduta inadequada, falta repetida sem aviso ou avaliação abusiva. Durante o piloto, os 50 primeiros cadastros aprovados não pagam mensalidade.</p>
+      <h3>Privacidade</h3>
+      <p>Usamos seus dados apenas para confirmar que você é vizinho, organizar jogos e mostrar sua reputação no clube. Nome, prédio, bairro, nível, horários e avaliações aparecem somente para sócios aprovados. O nome de quem te indicou fica visível só para o organizador. A foto é opcional e o WhatsApp só aparece se você marcar essa opção.</p>
+      <p>Não pedimos CPF, apartamento nem endereço. Não vendemos nem compartilhamos seus dados com terceiros. Eles ficam guardados no serviço que hospeda esta página. Você pode corrigir seu perfil ou apagar tudo a qualquer momento em "Sair do clube", o que também apaga as avaliações que você deu.</p>
+      <p>Avaliações são opinião de quem jogou e podem ser removidas pelo organizador quando forem abusivas.</p>
     </div>
+    <div class="dlg-actions"><span></span><button type="button" class="btn solid" id="legal-close">Entendi</button></div>
   </div>
-</section>
-
-<section class="sec sage" id="seguranca">
-  <div class="wrap grid">
-    <div class="label">Confiança</div>
-    <div class="prin">
-      <div>Apenas moradores verificados.</div>
-      <div>Todos os membros têm perfil com foto.</div>
-      <div>O anfitrião é sempre morador do prédio, dentro das regras do condomínio.</div>
-      <small>O Saque faz a apresentação. O jogo é entre vocês.</small>
+</dialog>
+<dialog id="rate" aria-labelledby="rate-h">
+  <form class="dlg" id="rate-form" novalidate>
+    <h2 id="rate-h">Como foi jogar?</h2>
+    <p class="hint" style="margin:-8px 0 0" id="rate-sub"></p>
+    <div class="stars" id="rate-stars" role="group" aria-label="Nota de 1 a 5"></div>
+    <label class="check"><input type="checkbox" id="rate-ns"><span>Combinamos de jogar e a pessoa faltou sem avisar.</span></label>
+    <p class="err" id="rate-err" role="alert"></p>
+    <div class="dlg-actions">
+      <button type="button" class="link-danger" id="rate-del" hidden>Remover minha avaliação</button>
+      <div class="r"><button type="button" class="btn" id="rate-cancel">Cancelar</button><button type="submit" class="btn solid" id="rate-save">Salvar</button></div>
     </div>
-  </div>
-</section>
+  </form>
+</dialog>
+<div id="toast" role="status" aria-live="polite"></div>
 
-<section class="sec" id="duvidas">
-  <div class="wrap grid">
-    <div class="label">Perguntas</div>
-    <div>
-      <details><summary>Quanto custa?</summary><p>Os primeiros sete dias são por nossa conta. Depois, uma mensalidade única, informada antes de qualquer cobrança, sem pagar por hora de quadra.</p></details>
-      <details><summary>Por que não simplesmente alugar uma quadra?</summary><p>Alugar custa por hora, exige reservar com antecedência e, nos melhores horários, nem sempre há vaga. Aqui você usa as quadras do bairro por reciprocidade e ainda encontra com quem jogar, sem precisar combinar tudo sozinho.</p></details>
-      <details><summary>Preciso ter quadra no meu prédio?</summary><p>Não. Quem tem quadra recebe como anfitrião; quem não tem joga como convidado. Todo jogo acontece na quadra de um morador que aceitou receber.</p></details>
-      <details><summary>Como o convidado entra no prédio?</summary><p>Como qualquer visita. O anfitrião avisa a portaria com antecedência, e enviamos a mensagem pronta com nome, data e horário.</p></details>
-      <details><summary>O condomínio precisa autorizar?</summary><p>Cada jogo segue as regras do condomínio do anfitrião. Se houver exigência de autorização, cabe ao morador anfitrião cumpri-la.</p></details>
-      <details><summary>E em caso de acidente ou dano?</summary><p>O Saque apenas conecta vizinhos; não administra quadras nem organiza partidas. Cada participante joga por sua conta e risco e responde por si e por seus convidados, conforme o termo de uso abaixo.</p></details>
-    </div>
-  </div>
-</section>
+<script>
+(function(){
+  var LEVELS={voltando:{t:'Voltando a jogar',n:1},medio:{t:'Médio',n:2},manda:{t:'Manda bem',n:3}};
+  var SLOTS=[['manha','Manhã','dia de semana'],['tarde','Tarde','dia de semana'],['noite','Noite','dia de semana'],['fds','Fim de semana','sáb e dom']];
+  var SLOT_LABEL={manha:'manhã',tarde:'tarde',noite:'noite',fds:'fim de semana'};
+  var $=function(s){return document.querySelector(s)};
+  var db=null, me={id:null}, canWrite=null, members=[], approved={}, ratings={}, isOwner=false, gotM=false, gotA=false, loaded=false, dbFail=false, slow=false, sampleOn=false, sampleDismissed=false, sampleAuto=false;
+  var filt={level:'all',building:'all',hood:'all',slot:'all',onlyNow:false};
+  var sig='', draft={photo:''}, armDel=false, saving=false;
 
-<section class="cta">
-  <div class="wrap">
-    <h2>Seu lugar <em>na quadra.</em></h2>
-    <a class="btn" href="https://tally.so/r/4a7X8o">Solicitar convite</a>
-    <p>Sete dias grátis. Resposta em até 24 horas.</p>
-  </div>
-</section>
+  function h(tag,attrs){
+    var e=document.createElement(tag);
+    if(attrs)Object.keys(attrs).forEach(function(k){var v=attrs[k];if(v==null||v===false)return;
+      if(k==='class')e.className=v;else if(k.slice(0,2)==='on')e.addEventListener(k.slice(2),v);else e.setAttribute(k,v===true?'':v);});
+    for(var i=2;i<arguments.length;i++){var c=arguments[i];[].concat(c).forEach(function(x){if(x==null||x===false)return;e.append(x.nodeType?x:document.createTextNode(String(x)))});}
+    return e;
+  }
+  function toast(msg){var t=$('#toast');t.textContent=msg;t.classList.add('on');clearTimeout(toast._t);toast._t=setTimeout(function(){t.classList.remove('on')},3200)}
+  function fmtTime(ms){return new Date(ms).toLocaleTimeString('pt-BR',{hour:'2-digit',minute:'2-digit'})}
+  function active(m){return !!(m.status&&m.status.until&&m.status.until>Date.now())}
+  function okPhoto(p){return typeof p==='string'&&p.indexOf('data:image/jpeg;base64,')===0}
+  function initials(n){var p=String(n||'?').trim().split(/\s+/);return ((p[0]||'?')[0]+(p.length>1?p[p.length-1][0]:'')).toUpperCase()}
+  function tone(n){var s=0;String(n).split('').forEach(function(c){s=(s*31+c.charCodeAt(0))%360});return 'hsl('+(60+s%70)+' 70% 76%)'}
+  function waLink(m,mineM){
+    var d=String(m.whatsapp||'').replace(/\D/g,'');if(d.length<10)return null;
+    var num=(d.indexOf('55')===0&&d.length>=12)?d:'55'+d;
+    var first=String(m.name||'').split(' ')[0];
+    var msg='Oi, '+first+'! Vi você no Saque'+(m.status&&active(m)?' e queria saber se topa jogar '+String(m.status.label||'').toLowerCase()+'.':' e queria saber se você topa jogar essa semana.')+(mineM?' Sou '+mineM.name+', do '+mineM.building+'.':'');
+    return 'https://wa.me/'+num+'?text='+encodeURIComponent(msg);
+  }
 
-<section class="legal" id="legal">
-  <div class="wrap">
-    <h4 id="termo">Termo de uso</h4>
-    <p>O Saque é um serviço de conexão entre vizinhos que querem jogar tênis. Não somos donos, administradores nem responsáveis por nenhuma quadra, e não organizamos, supervisionamos nem garantimos nenhuma partida. Ao aceitar, você declara que: (1) joga por conta e risco próprios e está apto fisicamente; (2) é responsável por seus atos e por seus convidados; (3) segue as regras do condomínio onde jogar; (4) isenta o Saque de qualquer responsabilidade por danos, lesões, perdas ou conflitos decorrentes do encontro entre participantes. O Saque pode remover qualquer pessoa do grupo, sem reembolso proporcional, em caso de conduta inadequada.</p>
-    <h4 id="privacidade">Privacidade</h4>
-    <p>Usamos seus dados apenas para verificar sua participação, organizar jogos e cobrar a mensalidade. Seu nome, foto, prédio, nível e avaliações aparecem somente para membros aprovados; seu telefone e apartamento não são exibidos. Não vendemos nem compartilhamos dados com terceiros, exceto o necessário para o pagamento. Para corrigir ou apagar seus dados, basta pedir pelo nosso contato.</p>
-  </div>
-</section>
+  // avatares ilustrados (só para o modo exemplo): formas planas, sem rosto, desenhadas aqui
+  function avatar(o){
+    var hair=o.hair,skin=o.skin,sh=o.shirt,bg=o.bg,st=o.style,behind='',front='';
+    var fringe='<path d="M28 52C30 34 44 30 48 30 58 30 68 36 68 52 60 42 40 42 28 52Z" fill="'+hair+'"/>';
+    if(st==='long'){behind='<path d="M26 60C24 30 40 22 48 22 58 22 72 30 70 60L75 108 21 108Z" fill="'+hair+'"/>';front=fringe}
+    else if(st==='bob'){behind='<path d="M25 58C24 30 40 22 48 22 58 22 72 30 71 58L72 80Q48 87 24 80Z" fill="'+hair+'"/>';front=fringe}
+    else if(st==='bun'){behind='<circle cx="48" cy="19" r="10" fill="'+hair+'"/>';front=fringe}
+    else if(st==='curly'){behind='<g fill="'+hair+'"><circle cx="28" cy="46" r="11"/><circle cx="68" cy="46" r="11"/><circle cx="34" cy="31" r="12"/><circle cx="62" cy="31" r="12"/><circle cx="48" cy="26" r="12"/><circle cx="25" cy="62" r="9"/><circle cx="71" cy="62" r="9"/></g>';front=''}
+    else{front='<path d="M28 56C26 32 42 28 48 28 60 28 70 34 68 56 62 44 38 44 28 56Z" fill="'+hair+'"/>'}
+    var svg='<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 124"><rect width="96" height="124" fill="'+bg+'"/>'+behind+'<path d="M6 124C8 98 28 92 48 92 68 92 88 98 90 124Z" fill="'+sh+'"/><rect x="42" y="76" width="12" height="20" rx="6" fill="'+skin+'"/><ellipse cx="48" cy="58" rx="20" ry="24" fill="'+skin+'"/>'+front+'</svg>';
+    return 'data:image/svg+xml;utf8,'+encodeURIComponent(svg);
+  }
 
-<footer>
-  <div class="wrap">
-    <div><a href="#termo">Termo de uso</a><a href="#privacidade">Privacidade</a><a href="https://www.instagram.com/saque.club?mdxt=MWM1cXg0bWJ5M2JzbQ%3D%3D&amp;utm_source=qr" target="_blank" rel="noopener">@saque.club</a></div>
-    <div>© Saque · Tênis entre vizinhos</div>
-  </div>
-</footer>
+  var SAMPLE=(function(){
+    var n=Date.now(),H=36e5;
+    return [
+      {id:'x1',name:'Rafael Monteiro',building:'Ed. Jacarandá',hood:'Vale do Sereno',level:'medio',slots:['noite','fds'],hosts:true,whatsapp:'',joinedAt:1,rep:{n:7,avg:4.8,ns:0},status:{label:'Hoje à noite',until:n+4*H},sample:true,avatar:avatar({style:'short',hair:'#3B2A20',skin:'#E0AC8A',shirt:'#2F4A3A',bg:'#E8F1C9'})},
+      {id:'x2',name:'Camila Torres',building:'Ed. Solar do Parque',hood:'Vila da Serra',level:'manda',slots:['manha','noite'],hosts:true,whatsapp:'',joinedAt:2,rep:{n:12,avg:4.9,ns:0},status:{label:'Agora',until:n+2*H},sample:true,avatar:avatar({style:'long',hair:'#5A3320',skin:'#F0C6A5',shirt:'#14583A',bg:'#DDF247'})},
+      {id:'x3',name:'André Lacerda',building:'Ed. Vila Verde',hood:'Belvedere',level:'voltando',slots:['manha','tarde'],hosts:false,whatsapp:'',joinedAt:3,rep:{n:3,avg:4.3,ns:1},status:null,sample:true,avatar:avatar({style:'short',hair:'#1E1E1E',skin:'#B97A57',shirt:'#3F3F46',bg:'#E4E4E7'})},
+      {id:'x4',name:'Beatriz Nogueira',building:'Ed. Jacarandá',hood:'Vale do Sereno',level:'medio',slots:['tarde','fds'],hosts:true,whatsapp:'',joinedAt:4,status:null,sample:true,avatar:avatar({style:'bun',hair:'#2A1B14',skin:'#EBB895',shirt:'#B45309',bg:'#FDE9C9'})},
+      {id:'x5',name:'Mariana Castro',building:'Ed. Aurora',hood:'Belvedere',level:'manda',slots:['noite'],hosts:false,whatsapp:'',joinedAt:5,rep:{n:5,avg:5,ns:0},status:{label:'Amanhã de manhã',until:n+16*H},sample:true,avatar:avatar({style:'bob',hair:'#A86B32',skin:'#F5D0B5',shirt:'#1D4ED8',bg:'#DBEAFE'})},
+      {id:'x6',name:'Luiza Barreto',building:'Ed. Solar do Parque',hood:'Vila da Serra',level:'voltando',slots:['manha','fds'],hosts:true,whatsapp:'',joinedAt:6,status:null,sample:true,avatar:avatar({style:'long',hair:'#161616',skin:'#C98B66',shirt:'#9D174D',bg:'#FCE7F3'})},
+      {id:'x7',name:'Juliana Prado',building:'Ed. Vila Verde',hood:'Belvedere',level:'medio',slots:['manha','tarde'],hosts:true,whatsapp:'',joinedAt:7,rep:{n:4,avg:4.7,ns:0},status:{label:'Agora',until:n+3*H},sample:true,avatar:avatar({style:'curly',hair:'#2B1A12',skin:'#8D5A3C',shirt:'#0F766E',bg:'#CCFBF1'})},
+      {id:'x8',name:'Patrícia Mendes',building:'Ed. Aurora',hood:'Vale do Sereno',level:'manda',slots:['noite','fds'],hosts:false,whatsapp:'',joinedAt:8,status:null,sample:true,avatar:avatar({style:'bob',hair:'#D9B382',skin:'#F3CBAE',shirt:'#6D28D9',bg:'#EDE9FE'})}
+    ];
+  })();
+
+  function isApproved(id){return !!approved[id]}
+  function list(){return sampleOn?SAMPLE:members.filter(function(m){return isApproved(m.id)||m.id===me.id})}
+  function pending(){return isOwner&&!sampleOn?members.filter(function(m){return !isApproved(m.id)&&m.id!==me.id}):[]}
+  function reputation(m){
+    if(m.rep)return m.rep;
+    var n=0,sum=0,ns=0;
+    Object.keys(ratings).forEach(function(r){if(r===m.id)return;var g=(ratings[r]||{}).given||{};var x=g[m.id];if(x&&x.s>=1&&x.s<=5){n++;sum+=x.s;if(x.ns)ns++}});
+    return {n:n,avg:n?sum/n:0,ns:ns};
+  }
+  function mineM(){return me.id?members.find(function(m){return m.id===me.id}):null}
+  function canJoin(){return !!(db&&me.id&&canWrite!==false)}
+
+  function levelBars(k){var L=LEVELS[k]||LEVELS.voltando;var b=h('span',{class:'b','aria-hidden':'true'});for(var i=1;i<=3;i++)b.append(h('i',{class:i<=L.n?'f':''}));return h('div',{class:'lvl'},b,h('span',null,L.t))}
+
+  function repLine(m){
+    var r=reputation(m);
+    if(!r.n)return h('p',{class:'rep'},h('span',{class:'new'},'Novo no clube'));
+    return h('p',{class:'rep'},h('span',null,h('span',{class:'star'},'★ '),h('b',null,r.avg.toFixed(1).replace('.',',')),' · '+r.n+(r.n===1?' avaliação':' avaliações')),r.ns?h('span',{class:'ns'},r.ns+(r.ns===1?' falta sem aviso':' faltas sem aviso')):null);
+  }
+  function normName(x){return String(x||'').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/\s+/g,' ').trim()}
+  function referrerIsMember(name){var n=normName(name);return !!n&&members.some(function(x){return isApproved(x.id)&&normName(x.name)===n})}
+  function card(m,num,mineRec,pend){
+    var on=active(m), isMe=!!(me.id&&m.id===me.id&&!sampleOn);
+    var ph=okPhoto(m.photo)?h('img',{class:'photo',src:m.photo,alt:'Foto de '+m.name}):m.avatar?h('img',{class:'photo',src:m.avatar,alt:'Ilustração de exemplo'}):h('div',{class:'photo',style:'background:'+tone(m.name),'aria-hidden':'true'},initials(m.name));
+    var wa=isMe||sampleOn?null:waLink(m,mineRec);
+    var cta;
+    if(isMe)cta=h('button',{class:'btn small',type:'button',onclick:openProfile},'Editar meu perfil');
+    else if(sampleOn)cta=h('span',{class:'quiet',style:'font-size:12px'},'Exemplo');
+    else if(wa)cta=h('a',{class:'btn small'+(on?' solid':''),href:wa,target:'_blank',rel:'noopener'},on?'Chamar para jogar':'Convidar');
+    else cta=h('span',{class:'quiet',style:'font-size:12px'},'Sem contato direto');
+    if(pend){
+      cta=h('div',{class:'acts'},
+        h('button',{class:'btn small solid',type:'button',onclick:function(){approve(m)}},'Aprovar'),
+        h('button',{class:'btn small',type:'button',onclick:function(e){reject(m,e.currentTarget)}},'Recusar'));
+    }else if(!isMe&&!sampleOn&&isApproved(me.id)&&isApproved(m.id)){
+      cta=h('div',{class:'acts'},h('button',{class:'btn small',type:'button',onclick:function(){openRate(m)}},ratings[me.id]&&(ratings[me.id].given||{})[m.id]?'Sua avaliação':'Avaliar jogo'),cta);
+    }
+    var st=pend?h('span',{class:'status'},'Aguardando aprovação'):on?h('span',{class:'status'},h('span',{class:'pulse'}),m.status.label+' · até '+fmtTime(m.status.until)):h('span',{class:'status'},'Sem horário marcado');
+    return h('article',{class:'card'+(on?' now':'')},
+      m.sample?h('span',{class:'ex'},'Exemplo'):(!sampleOn&&!isApproved(m.id)&&!pend?h('span',{class:'ex'},'Em análise'):null),
+      ph,
+      h('div',null,
+        h('div',{class:'meta'},h('span',{class:'num'},'SÓCIO Nº '+String(num).padStart(3,'0')),m.hosts?h('span',{class:'host'},'Anfitrião'):null),
+        h('h3',null,m.name),
+        h('p',{class:'bld'},m.building+(m.hood?' · '+m.hood:'')),
+        levelBars(m.level),
+        repLine(m),
+        pend?h('p',{class:'when',style:'color:var(--ink);font-weight:500'},'Indicado por '+(m.referredBy||'(não informou)')+(m.referredBy?(referrerIsMember(m.referredBy)?' · já é sócio':' · ainda não é sócio'):'')):null,
+        h('p',{class:'when'},(m.slots&&m.slots.length)?'Costuma jogar: '+m.slots.map(function(s){return SLOT_LABEL[s]||s}).join(', '):'Horários não informados')
+      ),
+      h('div',{class:'foot'},st,cta)
+    );
+  }
+
+  function passes(m){
+    if(filt.level!=='all'&&m.level!==filt.level)return false;
+    if(filt.building!=='all'&&m.building!==filt.building)return false;
+    if(filt.hood!=='all'&&m.hood!==filt.hood)return false;
+    if(filt.slot!=='all'&&!(m.slots||[]).includes(filt.slot))return false;
+    if(filt.onlyNow&&!active(m))return false;
+    return true;
+  }
+
+  function render(){
+    if(loaded&&!dbFail){
+      var realCount=members.filter(function(m){return isApproved(m.id)||m.id===me.id}).length;
+      if(!realCount&&!sampleDismissed&&!sampleOn){sampleOn=true;sampleAuto=true}
+      else if(realCount&&sampleAuto){sampleOn=false;sampleAuto=false}
+    }
+    var all=list().slice().sort(function(a,b){return (a.joinedAt||0)-(b.joinedAt||0)});
+    var nums={};all.forEach(function(m,i){nums[m.id]=i+1});
+    var now=all.filter(active);
+    var buildings=Array.from(new Set(all.map(function(m){return m.building}).filter(Boolean))).sort();
+    var mm=mineM();
+
+    // hero
+    var live=$('#live');live.textContent='';live.hidden=!all.length||!!all[0].sample;
+    if(!live.hidden)live.append(h('span',null,h('span',{class:'pulse'+(now.length?'':' off')}),h('b',null,now.length),' disponíveis agora'),h('span',null,h('b',null,all.length),all.length===1?' sócio':' sócios'),h('span',null,h('b',null,buildings.length),buildings.length===1?' prédio':' prédios'));
+
+    var hc=$('#hero-cta');hc.textContent='';
+    if(!mm&&joinOpen())hc.append(h('button',{class:'btn',type:'button',onclick:openProfile},'Entrar no clube'));
+    else if(mm&&!sampleOn)hc.append(h('button',{class:'btn',type:'button',onclick:openProfile},'Editar meu perfil'));
+
+    // mapa dos bairros
+    var HOODS=[{n:'Vale do Sereno',x:25,y:68,d:'M2 7c4 0 6 10 10 10s6-10 10-10'},{n:'Vila da Serra',x:52,y:42,d:'M2 18l5-9 4 6 3-4 8 7'},{n:'Belvedere',x:79,y:72,d:'M2 18h20M7 18a5 5 0 0 1 10 0'}];
+    var mp=$('#map-pins');mp.textContent='';
+    HOODS.forEach(function(hd){
+      var c=all.filter(function(m){return m.hood===hd.n}).length,on2=filt.hood===hd.n;
+      var ic=document.createElementNS('http://www.w3.org/2000/svg','svg');ic.setAttribute('viewBox','0 0 24 24');ic.setAttribute('aria-hidden','true');
+      var pth=document.createElementNS('http://www.w3.org/2000/svg','path');pth.setAttribute('d',hd.d);ic.append(pth);
+      mp.append(h('button',{class:'pin'+(on2?' on':''),type:'button',style:'left:'+hd.x+'%;top:'+hd.y+'%','aria-pressed':String(on2),'aria-label':hd.n+(c?', '+c+(c===1?' sócio':' sócios'):''),onclick:function(){filt.hood=on2?'all':hd.n;render()}},ic,hd.n,c?h('b',null,String(c)):null));
+    });
+
+    // barra
+    var who=$('#who');who.textContent='';
+    if(mm&&!sampleOn){
+      var av=okPhoto(mm.photo)?h('img',{class:'dot',src:mm.photo,alt:''}):h('span',{class:'dot','aria-hidden':'true'},initials(mm.name));
+      who.append(h('button',{class:'me-chip',type:'button',onclick:openProfile,'aria-label':'Editar meu perfil'},av,h('span',{style:'font-size:13px'},'Meu perfil')));
+    }else if(joinOpen()){
+      who.append(h('button',{class:'btn solid',type:'button',onclick:openProfile},'Entrar no clube'));
+    }else if(canWrite===false){
+      who.append(h('span',{class:'label'},'Somente leitura'));
+    }
+
+    // banner exemplo
+    var bn=$('#banner');bn.textContent='';
+    
+
+    // minha disponibilidade
+    var mine=$('#mine');mine.textContent='';
+    if(!sampleOn&&mm&&db&&!isApproved(mm.id)){
+      mine.append(h('div',{class:'mine'},h('div',null,h('p',{class:'label'},'Cadastro em análise'),h('p',{class:'st'},'Assim que o organizador confirmar seu prédio, você aparece para os vizinhos e pode avisar quando quer jogar.'))));
+    }else if(!sampleOn&&mm&&db){
+      var on=active(mm);
+      var box=h('div',{class:'mine'+(on?' on':'')});
+      box.append(h('div',null,h('p',{class:'label'},'Sua disponibilidade'),h('p',{class:'st'},on?('Você está disponível: '+mm.status.label.toLowerCase()+', até '+fmtTime(mm.status.until)+'.'):'Avise o bairro quando quiser jogar.')));
+      var b=h('div',{class:'btns'});
+      [['now','Agora · 2h'],['night','Hoje à noite'],['morning','Amanhã cedo']].forEach(function(p){b.append(h('button',{class:'btn small',type:'button',onclick:function(){checkin(p[0])}},p[1]))});
+      if(on)b.append(h('button',{class:'btn small',type:'button',onclick:function(){checkin(null)}},'Encerrar'));
+      box.append(b);mine.append(box);
+    }else if(joinOpen()&&loaded&&!dbFail){
+      mine.append(h('div',{class:'mine'},h('div',null,h('p',{class:'label'},'Você ainda não está no clube'),h('p',{class:'st'},'Crie seu perfil em dois minutos.')),h('button',{class:'btn solid',type:'button',onclick:openProfile},'Criar meu perfil')));
+    }else if(canWrite===false&&!sampleOn){
+      mine.append(h('div',{class:'mine'},h('div',null,h('p',{class:'label'},'Acesso'),h('p',{class:'st'},'Seu acesso é só de leitura. Peça ao organizador acesso de contribuidor para criar seu perfil.'))));
+    }
+
+    // pendentes (só o organizador)
+    var pd=$('#pend');pd.textContent='';
+    var pl=pending();
+    if(pl.length){
+      var pb=h('div',{class:'pendbox'},h('h2',null,'Aguardando aprovação ('+pl.length+')'),h('p',{class:'hint',style:'margin:0'},'Confirme o prédio antes de aprovar. Só você vê esta lista.'));
+      var pg=h('div',{class:'grid'});pl.forEach(function(m){pg.append(card(m,0,mm,true))});pb.append(pg);pd.append(pb);
+    }
+
+    // faixa de horários
+    var ss=$('#slots-sec');ss.textContent='';
+    if(all.length){
+      var counts={};SLOTS.forEach(function(s){counts[s[0]]=all.filter(function(m){return (m.slots||[]).includes(s[0])}).length});
+      var mx=Math.max(1,Math.max.apply(null,SLOTS.map(function(s){return counts[s[0]]})));
+      ss.append(h('div',{class:'sec-h'},h('h2',{id:'h-slots'},'Quando o bairro ',h('em',null,'joga')),h('span',{class:'label'},'Toque para filtrar')));
+      var g=h('div',{class:'slots'});
+      SLOTS.forEach(function(s){g.append(h('button',{class:'slot',type:'button','aria-pressed':String(filt.slot===s[0]),onclick:function(){filt.slot=filt.slot===s[0]?'all':s[0];render()}},
+        h('span',{class:'n'},counts[s[0]]),h('span',{class:'t'},s[1]),h('span',{class:'s'},s[2]),h('span',{class:'bar-b'},h('i',{style:'width:'+Math.round(counts[s[0]]/mx*100)+'%'}))))});
+      ss.append(g,h('p',{class:'hint'},'Número de sócios que costumam jogar em cada período. Veja em quais horários é mais fácil achar parceiro.'));
+    }
+
+    // filtros
+    var cs=$('#controls-sec');cs.textContent='';
+    if(all.length){
+      var c=h('div',{class:'controls'});
+      var ch=h('div',{class:'chips',role:'group','aria-label':'Nível'});
+      [['all','Todos os níveis']].concat(Object.keys(LEVELS).map(function(k){return [k,LEVELS[k].t]})).forEach(function(p){ch.append(h('button',{class:'pill',type:'button','aria-pressed':String(filt.level===p[0]),onclick:function(){filt.level=p[0];render()}},p[1]))});
+      var sel=h('select',{id:'f-b','aria-label':'Prédio',onchange:function(e){filt.building=e.target.value;render()}},h('option',{value:'all'},'Todos os prédios'));
+      buildings.forEach(function(x){var o=h('option',{value:x},x);if(filt.building===x)o.selected=true;sel.append(o)});
+      c.append(ch,sel,h('button',{class:'pill',type:'button','aria-pressed':String(filt.onlyNow),onclick:function(){filt.onlyNow=!filt.onlyNow;render()}},'Só disponíveis agora'));
+      cs.append(c);
+    }
+
+    // lista
+    var ls=$('#list-sec');ls.textContent='';
+    if(!loaded&&!sampleOn){
+      ls.append(h('p',{class:'quiet'},slow?'O clube está demorando para responder. Os dados podem estar desatualizados.':'Abrindo o clube…'));
+    }else if(dbFail&&!sampleOn){
+      ls.append(h('div',{class:'empty'},h('h3',null,'Clube fora do ar'),h('p',null,'Não foi possível acessar a lista de sócios agora. Tente abrir de novo em alguns minutos.'),h('div',{class:'row'},h('button',{class:'btn',type:'button',onclick:function(){sampleOn=true;render()}},'Ver exemplo'))));
+    }else if(!all.length){
+      var row=h('div',{class:'row'});
+      if(joinOpen())row.append(h('button',{class:'btn solid',type:'button',onclick:openProfile},'Criar meu perfil'));
+      row.append(h('button',{class:'btn',type:'button',onclick:function(){sampleOn=true;render()}},'Ver como ficará com sócios'));
+      ls.append(h('div',{class:'empty'},h('h3',null,'O clube abre as portas.'),row));
+    }else{
+      var vis=all.filter(passes);
+      var avail=vis.filter(active).sort(function(a,b){return a.status.until-b.status.until});
+      var rest=vis.filter(function(m){return !active(m)}).sort(function(a,b){return String(a.name).localeCompare(String(b.name),'pt-BR')});
+      if(!vis.length){
+        ls.append(h('div',{class:'empty'},h('h3',null,'Ninguém com esses filtros.'),h('p',null,'Tente outro nível, prédio ou horário.'),h('div',{class:'row'},h('button',{class:'btn',type:'button',onclick:function(){filt={level:'all',building:'all',hood:'all',slot:'all',onlyNow:false};render()}},'Limpar filtros'))));
+      }else{
+        ls.append(h('div',{class:'sec-h'},h('h2',null,'Disponíveis ',h('em',null,'agora')),h('span',{class:'label'},avail.length+(avail.length===1?' sócio':' sócios'))));
+        if(avail.length){var g1=h('div',{class:'grid'});avail.forEach(function(m){g1.append(card(m,nums[m.id],mm))});ls.append(g1)}
+        else ls.append(h('p',{class:'quiet'},'Ninguém marcou disponibilidade neste momento. Seja o primeiro a avisar o bairro.'));
+        if(rest.length){
+          ls.append(h('div',{class:'sec-h',style:'margin-top:44px'},h('h2',null,'Todos os ',h('em',null,'sócios')),h('span',{class:'label'},rest.length+(rest.length===1?' sócio':' sócios'))));
+          var g2=h('div',{class:'grid'});rest.forEach(function(m){g2.append(card(m,nums[m.id],mm))});ls.append(g2);
+        }
+      }
+    }
+    sig=signature();
+  }
+  function signature(){return list().filter(active).map(function(m){return m.id+m.status.until}).join('|')}
+
+  async function approve(m){
+    if(saving||!db)return;saving=true;
+    try{await db.doc('approved/'+m.id).set({at:Date.now(),by:me.id});toast(m.name+' aprovado.')}
+    catch(e){toast('Não foi possível aprovar agora.')}
+    saving=false;
+  }
+  async function reject(m,btn){
+    if(btn.dataset.arm!=='1'){btn.dataset.arm='1';btn.textContent='Confirmar recusa';return}
+    if(saving||!db)return;saving=true;
+    try{await db.doc('members/'+m.id).delete();toast('Cadastro recusado.')}
+    catch(e){toast('Não foi possível recusar agora.')}
+    saving=false;
+  }
+
+  // avaliação
+  var rateDlg=$('#rate'),rateTarget=null,rateVal=0;
+  function paintStars(){document.querySelectorAll('#rate-stars button').forEach(function(b){b.setAttribute('aria-pressed',String(+b.dataset.v===rateVal))})}
+  function openRate(m){
+    rateTarget=m;var cur=((ratings[me.id]||{}).given||{})[m.id];
+    rateVal=cur?cur.s:0;$('#rate-ns').checked=!!(cur&&cur.ns);$('#rate-err').textContent='';
+    $('#rate-sub').textContent='Avalie '+m.name+'. Só sócios aprovados veem as notas, e cada pessoa tem uma avaliação sua.';
+    var box=$('#rate-stars');box.textContent='';
+    for(var i=1;i<=5;i++)box.append(h('button',{type:'button','data-v':i,onclick:function(e){rateVal=+e.currentTarget.dataset.v;paintStars()}},String(i)));
+    paintStars();$('#rate-del').hidden=!cur;
+    rateDlg.showModal();
+  }
+  $('#rate-cancel').addEventListener('click',function(){rateDlg.close()});
+  async function saveRating(del){
+    if(saving||!db||!rateTarget)return;
+    if(!del&&!rateVal){$('#rate-err').textContent='Escolha uma nota de 1 a 5.';return}
+    saving=true;
+    var given=Object.assign({},((ratings[me.id]||{}).given)||{});
+    if(del)delete given[rateTarget.id];else given[rateTarget.id]={s:rateVal,ns:$('#rate-ns').checked,at:Date.now()};
+    try{await db.doc('ratings/'+me.id).set({given:given});rateDlg.close();toast(del?'Avaliação removida.':'Avaliação salva.')}
+    catch(e){$('#rate-err').textContent=(e&&e.code==='invalid_argument')?'Seu acesso não permite salvar.':'Não foi possível salvar agora. Tente de novo.'}
+    saving=false;
+  }
+  $('#rate-form').addEventListener('submit',function(ev){ev.preventDefault();saveRating(false)});
+  $('#rate-del').addEventListener('click',function(){saveRating(true)});
+
+  // termo e privacidade
+  var legalDlg=$('#legal');
+  function openLegal(){if(!legalDlg.open)legalDlg.showModal()}
+  $('#open-legal').addEventListener('click',openLegal);
+  $('#legal-close').addEventListener('click',function(){legalDlg.close()});
+  document.addEventListener('click',function(e){var t=e.target.closest&&e.target.closest('[data-legal]');if(t){e.preventDefault();openLegal()}});
+
+  // check-in
+  function preset(k){
+    var n=new Date();
+    if(k==='now')return {label:'Agora',until:Date.now()+2*36e5};
+    if(k==='night'){var d=new Date();d.setHours(23,0,0,0);return {label:'Hoje à noite',until:d.getTime()>Date.now()+36e5?d.getTime():Date.now()+2*36e5}}
+    var t=new Date(n.getFullYear(),n.getMonth(),n.getDate()+1,12,0,0,0);return {label:'Amanhã de manhã',until:t.getTime()};
+  }
+  async function checkin(k){
+    if(saving||!db||!me.id)return;saving=true;
+    try{await db.doc('members/'+me.id).update({status:k?preset(k):null});toast(k?'Pronto, o bairro já pode te chamar.':'Disponibilidade encerrada.')}
+    catch(e){toast(e&&e.code==='invalid_argument'?'Seu acesso não permite salvar.':'Não foi possível salvar agora. Tente de novo.')}
+    saving=false;
+  }
+
+  // diálogo
+  var dlg=$('#dlg');
+  function buildOpts(){
+    var L=$('#f-level');L.textContent='';
+    Object.keys(LEVELS).forEach(function(k){L.append(h('label',{class:'opt'},h('input',{type:'radio',name:'lvl',value:k}),h('span',null,LEVELS[k].t)))});
+    var S=$('#f-slots');S.textContent='';
+    SLOTS.forEach(function(s){S.append(h('label',{class:'opt'},h('input',{type:'checkbox',name:'slt',value:s[0]}),h('span',null,s[1]+(s[0]==='fds'?'':' · semana'))))});
+  }
+  function setPrev(){
+    var p=$('#f-prev');p.textContent='';p.style.background='';p.style.backgroundImage='';
+    if(okPhoto(draft.photo)){p.style.background='url('+draft.photo+') center/cover'}
+    else{p.style.background=tone($('#f-name').value||'Saque');p.textContent=initials($('#f-name').value||'S')}
+  }
+  function joinOpen(){return false}
+  function openProfile(){
+    if(!canJoin())return;
+    buildOpts();armDel=false;$('#f-err').textContent='';
+    var m=mineM();
+    var bl=$('#bl');bl.textContent='';Array.from(new Set(members.map(function(x){return x.building}).filter(Boolean))).forEach(function(b){bl.append(h('option',{value:b}))});
+    $('#f-name').value=m?m.name:'';$('#f-bld').value=m?m.building:'';$('#f-hood').value=m&&m.hood?m.hood:'';
+    draft.photo=m&&okPhoto(m.photo)?m.photo:'';
+    $('#f-terms').checked=!!(m&&m.acceptedAt);$('#f-ref').value=m&&m.referredBy?m.referredBy:'';
+    var lv=m?m.level:'';document.querySelectorAll('input[name=lvl]').forEach(function(i){i.checked=i.value===lv});
+    document.querySelectorAll('input[name=slt]').forEach(function(i){i.checked=!!(m&&(m.slots||[]).includes(i.value))});
+    $('#f-host').checked=!!(m&&m.hosts);$('#f-wa').value=m?m.whatsapp||'':'';$('#f-share').checked=!!(m&&m.whatsapp);
+    $('#dlg-t').textContent=m?'Seu perfil de sócio':'Entrar no clube';
+    $('#f-save').textContent=m?'Salvar perfil':'Entrar no clube';
+    var del=$('#f-del');del.hidden=!m;del.textContent='Sair do clube';del.classList.remove('arm');
+    setPrev();
+    if(!dlg.open)dlg.showModal();
+  }
+  async function cropPhoto(file){
+    var url=URL.createObjectURL(file);
+    var img=await new Promise(function(res,rej){var i=new Image();i.onload=function(){res(i)};i.onerror=rej;i.src=url});
+    var W=240,H=300,c=document.createElement('canvas');c.width=W;c.height=H;
+    var r=Math.max(W/img.width,H/img.height),w=img.width*r,hh=img.height*r;
+    c.getContext('2d').drawImage(img,(W-w)/2,(H-hh)/2,w,hh);URL.revokeObjectURL(url);
+    return c.toDataURL('image/jpeg',.8);
+  }
+  $('#f-pick').addEventListener('click',function(){$('#f-file').click()});
+  $('#f-file').addEventListener('change',async function(e){
+    var f=e.target.files&&e.target.files[0];if(!f)return;
+    try{draft.photo=await cropPhoto(f);setPrev()}catch(x){$('#f-err').textContent='Não consegui ler essa imagem. Tente outra foto.'}
+    e.target.value='';
+  });
+  $('#f-name').addEventListener('input',function(){if(!okPhoto(draft.photo))setPrev()});
+  $('#f-cancel').addEventListener('click',function(){dlg.close()});
+  $('#f-del').addEventListener('click',async function(){
+    var b=$('#f-del');
+    if(!armDel){armDel=true;b.textContent='Confirmar saída do clube';b.classList.add('arm');return}
+    if(saving)return;saving=true;
+    try{await db.doc('members/'+me.id).delete();try{await db.doc('ratings/'+me.id).delete()}catch(x){}dlg.close();toast('Você saiu do clube.')}
+    catch(e){$('#f-err').textContent='Não foi possível sair agora. Tente de novo.'}
+    saving=false;
+  });
+  $('#form').addEventListener('submit',async function(ev){
+    ev.preventDefault();if(saving)return;
+    var name=$('#f-name').value.trim(),bld=$('#f-bld').value.trim();
+    var lv=(document.querySelector('input[name=lvl]:checked')||{}).value;
+    var slots=Array.from(document.querySelectorAll('input[name=slt]:checked')).map(function(i){return i.value});
+    var wa=$('#f-wa').value.replace(/\D/g,''),share=$('#f-share').checked&&wa.length>=10;
+    var err=$('#f-err');
+    if(name.length<2){err.textContent='Informe seu nome.';return}
+    if(!bld){err.textContent='Informe o seu prédio.';return}
+    var hood=$('#f-hood').value;
+    if(!hood){err.textContent='Escolha o seu bairro.';return}
+    if(!lv){err.textContent='Escolha o seu nível.';return}
+    var ref=$('#f-ref').value.trim().replace(/\s+/g,' ');
+    if(!isOwner&&ref.split(' ').filter(Boolean).length<2){err.textContent='Informe nome e sobrenome de quem te indicou. O Saque só aceita por indicação.';return}
+    if($('#f-share').checked&&wa.length<10){err.textContent='Digite o WhatsApp com DDD ou desmarque a opção de contato.';return}
+    if(!$('#f-terms').checked){err.textContent='Aceite o termo de uso e a privacidade para continuar.';return}
+    err.textContent='';saving=true;var btn=$('#f-save');btn.disabled=true;
+    var ex=mineM();
+    try{
+      await db.doc('members/'+me.id).set({name:name,building:bld,hood:hood,level:lv,referredBy:ref,slots:slots,hosts:$('#f-host').checked,whatsapp:share?wa:'',photo:okPhoto(draft.photo)?draft.photo:'',joinedAt:(ex&&ex.joinedAt)||Date.now(),acceptedAt:(ex&&ex.acceptedAt)||Date.now(),status:(ex&&ex.status)||null});
+      if(isOwner&&!isApproved(me.id)){try{await db.doc('approved/'+me.id).set({at:Date.now(),by:me.id})}catch(x){}}
+      dlg.close();toast(ex?'Perfil atualizado.':(isOwner?'Bem-vindo ao Saque.':'Cadastro enviado. O organizador vai confirmar seu prédio.'));
+    }catch(e){
+      err.textContent=(e&&e.code==='invalid_argument')?'Seu acesso não permite salvar. Peça acesso de contribuidor ao organizador.':(e&&e.code==='quota_exceeded')?'O clube atingiu o limite de dados.':'Não foi possível salvar agora. Tente de novo.';
+    }
+    saving=false;btn.disabled=false;
+  });
+
+  // início
+  render();
+  var slowT=setTimeout(function(){if(!loaded){slow=true;render()}},10000);
+  setInterval(function(){if(signature()!==sig)render()},30000);
+  (async function(){
+    var cl=window.claude;
+    if(!cl||!cl.use){loaded=true;dbFail=true;render();return}
+    try{var u=await cl.use('user');if(u){var m=await u.me();me.id=m.id;canWrite=await u.can('data.write');try{isOwner=!!u.isOwner()}catch(x){}}}catch(e){}
+    try{db=await cl.use('db')}catch(e){db=null}
+    if(!db){loaded=true;dbFail=true;render();return}
+    try{
+      function ready(){if(gotM&&gotA){loaded=true;dbFail=false;clearTimeout(slowT);slow=false}render()}
+      db.collection('members').onSnapshot(function(snap){
+        members=snap.docs.map(function(d){return Object.assign({id:d.id},d.data())});gotM=true;ready();
+      },function(){loaded=true;dbFail=true;clearTimeout(slowT);render()});
+      db.collection('approved').onSnapshot(function(snap){
+        approved={};snap.docs.forEach(function(d){approved[d.id]=true});gotA=true;ready();
+      },function(){gotA=true;ready()});
+      db.collection('ratings').onSnapshot(function(snap){
+        ratings={};snap.docs.forEach(function(d){ratings[d.id]=d.data()});render();
+      },function(){});
+    }catch(e){loaded=true;dbFail=true;render()}
+  })();
+})();
+</script>
+
+<script>
+(function(){
+  var hero=document.getElementById('t-court'),cv=document.getElementById('balls');
+  if(!hero||!cv||!cv.getContext)return;
+  var ctx=cv.getContext('2d'),W=0,H=0,dpr=1,balls=[],mouse={x:-999,y:-999,on:false},raf=0,vis=true;
+  var reduce=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var LINK=130,PUSH=150;
+  function size(){
+    var r=hero.getBoundingClientRect();dpr=Math.min(2,window.devicePixelRatio||1);
+    W=r.width;H=r.height;cv.width=Math.round(W*dpr);cv.height=Math.round(H*dpr);ctx.setTransform(dpr,0,0,dpr,0,0);
+    var n=Math.round(Math.max(16,Math.min(44,W*H/16000)));
+    while(balls.length<n)balls.push({x:Math.random()*W,y:Math.random()*H,vx:(Math.random()-.5)*.35,vy:(Math.random()-.5)*.35,r:4+Math.random()*3,ph:Math.random()*6.28});
+    balls.length=n;
+    balls.forEach(function(b){if(b.x>W)b.x=Math.random()*W;if(b.y>H)b.y=Math.random()*H});
+  }
+  function step(){
+    for(var i=0;i<balls.length;i++){
+      var b=balls[i];
+      b.ph+=.01;
+      b.vx+=Math.cos(b.ph)*.004;b.vy+=Math.sin(b.ph*1.3)*.004;
+      if(mouse.on){
+        var dx=b.x-mouse.x,dy=b.y-mouse.y,d=Math.sqrt(dx*dx+dy*dy);
+        if(d<PUSH&&d>.5){var f=(1-d/PUSH)*.9;b.vx+=dx/d*f;b.vy+=dy/d*f}
+      }
+      b.vx*=.97;b.vy*=.97;
+      var sp=Math.sqrt(b.vx*b.vx+b.vy*b.vy);
+      if(sp<.12){b.vx+=(Math.random()-.5)*.03;b.vy+=(Math.random()-.5)*.03}
+      if(sp>3.2){b.vx*=3.2/sp;b.vy*=3.2/sp}
+      b.x+=b.vx;b.y+=b.vy;
+      if(b.x<-10)b.x=W+10;else if(b.x>W+10)b.x=-10;
+      if(b.y<-10)b.y=H+10;else if(b.y>H+10)b.y=-10;
+    }
+  }
+  function draw(){
+    ctx.clearRect(0,0,W,H);
+    for(var k=0;k<balls.length;k++){
+      var b=balls[k],r=b.r;
+      ctx.fillStyle='rgba(221,242,71,.55)';
+      ctx.beginPath();ctx.arc(b.x,b.y,r,0,6.2832);ctx.fill();
+      ctx.save();ctx.beginPath();ctx.arc(b.x,b.y,r,0,6.2832);ctx.clip();
+      ctx.strokeStyle='rgba(10,50,30,.5)';ctx.lineWidth=Math.max(.8,r*.18);
+      ctx.beginPath();ctx.arc(b.x-r*1.35,b.y,r*1.15,-.8,.8);ctx.stroke();
+      ctx.beginPath();ctx.arc(b.x+r*1.35,b.y,r*1.15,Math.PI-.8,Math.PI+.8);ctx.stroke();
+      ctx.restore();
+    }
+  }
+  function loop(){step();draw();raf=requestAnimationFrame(loop)}
+  function start(){if(!raf&&vis&&!reduce)raf=requestAnimationFrame(loop)}
+  function stop(){if(raf){cancelAnimationFrame(raf);raf=0}}
+  size();draw();
+  if(window.ResizeObserver)new ResizeObserver(function(){size();if(reduce||!raf)draw()}).observe(hero);else window.addEventListener('resize',size);
+  hero.addEventListener('pointermove',function(e){var r=hero.getBoundingClientRect();mouse.x=e.clientX-r.left;mouse.y=e.clientY-r.top;mouse.on=true});
+  hero.addEventListener('pointerleave',function(){mouse.on=false});
+  hero.addEventListener('pointercancel',function(){mouse.on=false});
+  if(window.IntersectionObserver)new IntersectionObserver(function(es){vis=es[0].isIntersecting;vis?start():stop()}).observe(hero);
+  document.addEventListener('visibilitychange',function(){document.hidden?stop():start()});
+  start();
+})();
+
+(function(){try{
+  var box=document.getElementById('vid');if(!box)return;
+  var v=box.querySelectorAll('video');if(v.length<2)return;
+  var a=v[0],b=v[1],cur=a;
+  a.loop=false;a.classList.add('on');
+  function swap(from,to){
+    to.currentTime=0;
+    var p=to.play();if(p&&p.catch)p.catch(function(){});
+    to.classList.add('on');from.classList.remove('on');
+    cur=to;
+  }
+  a.addEventListener('ended',function(){swap(a,b)});
+  b.addEventListener('ended',function(){swap(b,a)});
+  a.play&&a.play().catch&&a.play().catch(function(){});
+}catch(e){}})();
+</script>
 
 </body>
 </html>
